@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Confaketionary | A Tad of Pizzazz</title>
+    <meta name="description" content="Baby gifts designed so sweet, they look good enough to eat! Handcrafted with love at A Tad of Pizzazz.">
+    
+    <style>
+        :root {
+            --primary: #C71585;
+            --secondary: #FF69B4;
+            --accent: #FFB6C1;
+            --light-pink: #FFF0F5;
+            --gold: #FFD700;
+            --text-dark: #2F2F2F;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --cream: #FFF8DC;
+            --coral: #FF7F7F;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-pink) 100%);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--primary);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(199, 21, 133, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-logo {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--coral) 0%, var(--secondary) 50%, var(--primary) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="sprinkles" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="none"/><rect x="3" y="7" width="2" height="6" fill="%23FFD700" transform="rotate(30 4 10)"/><rect x="12" y="3" width="2" height="6" fill="%2300FF7F" transform="rotate(-45 13 6)"/><rect x="7" y="15" width="2" height="6" fill="%23FF69B4" transform="rotate(60 8 18)"/><rect x="15" y="12" width="2" height="6" fill="%2300BFFF" transform="rotate(-30 16 15)"/></pattern></defs><rect width="100" height="100" fill="url(%23sprinkles)" opacity="0.3"/></svg>');
+            animation: sprinkleFloat 20s infinite linear;
+        }
+        
+        @keyframes sprinkleFloat {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-20px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            color: var(--white);
+        }
+        
+        .hero-tagline {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--cream);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        /* Features Grid */
+        .features-section {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 100%);
+            padding: 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(199, 21, 133, 0.1);
+            border: 3px solid var(--accent);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 182, 193, 0.1), transparent);
+            animation: rotate 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(199, 21, 133, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-card p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Product Showcase */
+        .showcase-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(45deg, var(--light-pink) 0%, var(--cream) 50%, var(--light-pink) 100%);
+        }
+        
+        .showcase-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+        
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(199, 21, 133, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 182, 193, 0.1) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .product-card:hover::after {
+            opacity: 1;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px) rotate(1deg);
+            box-shadow: 0 25px 50px rgba(199, 21, 133, 0.25);
+        }
+        
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><circle cx="10" cy="15" r="2" fill="white" opacity="0.3"/><circle cx="35" cy="25" r="3" fill="white" opacity="0.2"/><circle cx="20" cy="35" r="1.5" fill="white" opacity="0.4"/><circle cx="40" cy="10" r="2.5" fill="white" opacity="0.25"/></svg>');
+            animation: bubbleFloat 15s infinite ease-in-out;
+        }
+        
+        @keyframes bubbleFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+        
+        .product-info {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .product-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '🧁🍰🎂🧁🍰🎂';
+            position: absolute;
+            top: 20%;
+            left: -100%;
+            font-size: 3rem;
+            opacity: 0.2;
+            animation: slideText 20s infinite linear;
+        }
+        
+        .cta-section::after {
+            content: '🎉🎁🌟🎉🎁🌟';
+            position: absolute;
+            bottom: 20%;
+            right: -100%;
+            font-size: 2.5rem;
+            opacity: 0.2;
+            animation: slideTextReverse 25s infinite linear;
+        }
+        
+        @keyframes slideText {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        @keyframes slideTextReverse {
+            0% { right: -100%; }
+            100% { right: 100%; }
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-btn-primary {
+            background: var(--gold);
+            color: var(--text-dark);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        .cta-btn-primary:hover {
+            background: #FFC700;
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .cta-btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-logo {
+                height: 30px;
+                left: 1rem;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light-pink);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="Tadd-Logo.png" alt="A Tad of Pizzazz Logo" class="nav-logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bath-body.html">Bath & Body</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="housewares.html">Housewares</a></li>
+            <li><a href="confaketionary.html">Confaketionary</a></li>
+            <li><a href="hair-flair.html">Hair Flair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>THE CONFAKETIONARY</h1>
+            <p class="hero-tagline">Baby gifts designed so sweet, they look good enough to eat!</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🍭</div>
+                <h3>SUGAR FREE</h3>
+                <p>Zero sugar with 100% sweetness. Handcrafted with love, these gifts offer more than just sweet surprises, they celebrate both baby and parents.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>SIGNATURE RECIPIES</h3>
+                <p>Freshly baked goodness, only at A Tad of Pizzazz. Each creation follows our exclusive recipes for unforgettable baby gifts.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌾</div>
+                <h3>GLUTEN FREE</h3>
+                <p>No glue or other adhesives are used to secure the baby items. Everything is carefully assembled with safe, gentle techniques.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>MADE-TO-ORDER</h3>
+                <p>Your imagination is our ingredient. Custom orders welcomed! Let us create something special just for your little one.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Sweet Creations That Celebrate New Life</h2>
+        <div class="showcase-grid">
+            <div class="product-card">
+                <div class="product-image">🧁</div>
+                <div class="product-info">
+                    <h3>Diaper Cupcakes</h3>
+                    <p>Adorable single-serving treats made from soft diapers and essential baby items, designed to look like delicious cupcakes.</p>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">🎂</div>
+                <div class="product-info">
+                    <h3>Diaper Cakes</h3>
+                    <p>Multi-tiered celebrations featuring premium diapers, soft washcloths, and carefully selected baby essentials arranged in cake form.</p>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">🍪</div>
+                <div class="product-info">
+                    <h3>Baby Cookies</h3>
+                    <p>Sweet washcloth treats folded and arranged to look like tempting cookies, complete with delightful baby accessories.</p>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">🍰</div>
+                <div class="product-info">
+                    <h3>Celebration Centerpieces</h3>
+                    <p>Grand displays that serve as both gorgeous decoration and practical gift, featuring multiple baby essentials in edible-looking arrangements.</p>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">🧸</div>
+                <div class="product-info">
+                    <h3>Plush Companions</h3>
+                    <p>Soft, cuddly friends that complement our edible-looking creations, providing comfort and joy for the new arrival.</p>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">🎁</div>
+                <div class="product-info">
+                    <h3>Custom Gift Sets</h3>
+                    <p>Personalized collections combining our signature "treats" with specially chosen items tailored to welcome each unique little one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Create Something Sweet?</h2>
+            <p>Whether you're celebrating a baby shower, welcoming a new arrival, or searching for the perfect gift, our Confaketionary creations are handcrafted with love and designed to delight both babies and parents.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-btn cta-btn-primary">Order Custom Creation</a>
+                <a href="index.html#contact" class="cta-btn cta-btn-secondary">Visit Our Store</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#shop">Collections</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="mailto:hello@atadofpizzazz.com">Email Us</a>
+        </div>
+        <p>&copy; 2025 A Tad of Pizzazz. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Handcrafted with love in Rumford, RI</p>
+    </footer>
+
+    <script>
+        // Add some delightful interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Add sparkle effect on hover for product cards
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) rotate(1deg) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
