@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bath & Body | A Tad of Pizzazz</title>
+    <meta name="description" content="Luxurious, handcrafted bath products that transform your daily routine into a spa-like experience at A Tad of Pizzazz.">
+    
+    <style>
+        :root {
+            --primary: #C71585;
+            --secondary: #FF69B4;
+            --accent: #FFB6C1;
+            --light-pink: #FFF0F5;
+            --gold: #FFD700;
+            --text-dark: #2F2F2F;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --lavender: #E6E6FA;
+            --mint: #F0FFF0;
+            --sage: #9CAF88;
+            --pearl: #F8F8FF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--pearl) 0%, var(--lavender) 50%, var(--mint) 100%);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(199, 21, 133, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 30px rgba(199, 21, 133, 0.2);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-logo {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--sage) 30%, var(--mint) 70%, var(--pearl) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><circle cx="50" cy="70" r="15" fill="white" opacity="0.3" filter="url(%23glow)"/><circle cx="150" cy="130" r="20" fill="white" opacity="0.2" filter="url(%23glow)"/><circle cx="100" cy="40" r="12" fill="white" opacity="0.4" filter="url(%23glow)"/><circle cx="30" cy="160" r="18" fill="white" opacity="0.25" filter="url(%23glow)"/><circle cx="170" cy="60" r="14" fill="white" opacity="0.3" filter="url(%23glow)"/></svg>');
+            animation: bubbleFloat 20s ease-in-out infinite;
+        }
+        
+        @keyframes bubbleFloat {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-30px) scale(1.1); opacity: 1; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 3px;
+            font-style: italic;
+        }
+        
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* Luxury Features Grid */
+        .luxury-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+        
+        .luxury-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 49%, rgba(230, 230, 250, 0.3) 50%, transparent 51%);
+            pointer-events: none;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 4rem;
+            font-weight: 300;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--primary), var(--accent));
+            margin: 1rem auto;
+            border-radius: 3px;
+        }
+        
+        .luxury-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .luxury-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--pearl) 100%);
+            padding: 3rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(199, 21, 133, 0.1);
+            border: 1px solid var(--accent);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .luxury-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 182, 193, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .luxury-card:hover::before {
+            opacity: 1;
+        }
+        
+        .luxury-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(199, 21, 133, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .luxury-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 25px rgba(199, 21, 133, 0.3);
+        }
+        
+        .luxury-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .luxury-card p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Product Collection */
+        .collection-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--mint) 0%, var(--lavender) 50%, var(--pearl) 100%);
+        }
+        
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-showcase {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .product-showcase::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(156, 175, 136, 0.1) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .product-showcase:hover::after {
+            opacity: 1;
+        }
+        
+        .product-showcase:hover {
+            transform: translateY(-15px) rotate(-1deg);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-visual {
+            height: 280px;
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--sage) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 8s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .product-details {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .product-details h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .product-details p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        /* Spa Experience Section */
+        .spa-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .spa-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><radialGradient id="steam1"><stop offset="0%" stop-color="white" stop-opacity="0.6"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient><radialGradient id="steam2"><stop offset="0%" stop-color="lavender" stop-opacity="0.4"/><stop offset="100%" stop-color="lavender" stop-opacity="0"/></radialGradient></defs><ellipse cx="100" cy="300" rx="30" ry="60" fill="url(%23steam1)" transform="skewX(-10)"><animateTransform attributeName="transform" type="translate" values="0,0; 10,-20; 0,0" dur="6s" repeatCount="indefinite"/></ellipse><ellipse cx="300" cy="250" rx="25" ry="50" fill="url(%23steam2)" transform="skewX(15)"><animateTransform attributeName="transform" type="translate" values="0,0; -15,-25; 0,0" dur="8s" repeatCount="indefinite"/></ellipse><ellipse cx="200" cy="350" rx="35" ry="70" fill="url(%23steam1)" transform="skewX(5)"><animateTransform attributeName="transform" type="translate" values="0,0; 5,-30; 0,0" dur="7s" repeatCount="indefinite"/></ellipse></svg>');
+            opacity: 0.3;
+        }
+        
+        .spa-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .spa-content h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .spa-content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+        
+        .spa-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .spa-feature {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--pearl) 0%, var(--lavender) 100%);
+            border-radius: 20px;
+            border: 2px solid var(--accent);
+        }
+        
+        .spa-feature h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--sage) 50%, var(--secondary) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="spa-pattern" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="2" fill="white" opacity="0.1"/><circle cx="5" cy="15" r="1.5" fill="white" opacity="0.15"/><circle cx="15" cy="5" r="1" fill="white" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23spa-pattern)"/></svg>');
+            animation: patternMove 30s linear infinite;
+        }
+        
+        @keyframes patternMove {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-20px) translateY(-20px); }
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+        
+        .cta-btn-primary {
+            background: var(--gold);
+            color: var(--text-dark);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+        
+        .cta-btn-primary:hover {
+            background: #FFC700;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+        }
+        
+        .cta-btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .luxury-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .luxury-card {
+                padding: 2rem;
+            }
+            
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .spa-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-logo {
+                height: 30px;
+                left: 1rem;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--pearl);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--sage));
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--secondary), var(--accent));
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="Tadd-Logo.png" alt="A Tad of Pizzazz Logo" class="nav-logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bath-body.html">Bath & Body</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="housewares.html">Housewares</a></li>
+            <li><a href="confaketionary.html">Confaketionary</a></li>
+            <li><a href="hair-flair.html">Hair Flair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bath & Body Luxuries</h1>
+            <p class="hero-tagline">Transform your daily ritual into an extraordinary spa experience</p>
+        </div>
+    </section>
+
+    <!-- Luxury Features Section -->
+    <section class="luxury-section">
+        <h2 class="section-title">Indulgence Crafted by Hand</h2>
+        <div class="luxury-grid">
+            <div class="luxury-card">
+                <div class="luxury-icon">🌿</div>
+                <h3>Natural Ingredients</h3>
+                <p>Each product is carefully formulated with premium botanicals, essential oils, and natural extracts that nourish your skin while delighting your senses with captivating fragrances.</p>
+            </div>
+            
+            <div class="luxury-card">
+                <div class="luxury-icon">✨</div>
+                <h3>Artisan Crafted</h3>
+                <p>Every soap, scrub, and bath bomb is lovingly handcrafted in small batches to ensure exceptional quality and attention to detail in every luxurious piece.</p>
+            </div>
+            
+            <div class="luxury-card">
+                <div class="luxury-icon">🎭</div>
+                <h3>Signature Scents</h3>
+                <p>Our exclusive fragrance blends are carefully curated to transport you to a world of relaxation, featuring everything from calming lavender to invigorating citrus.</p>
+            </div>
+            
+            <div class="luxury-card">
+                <div class="luxury-icon">💎</div>
+                <h3>Premium Quality</h3>
+                <p>Using only the finest ingredients and time-honored techniques, our bath products deliver a spa-quality experience that pampers your skin and soothes your soul.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Collection -->
+    <section class="collection-section">
+        <h2 class="section-title">Luxurious Collection</h2>
+        <div class="collection-grid">
+            <div class="product-showcase">
+                <div class="product-visual">🧴</div>
+                <div class="product-details">
+                    <h3>Nourishing Body Lotions</h3>
+                    <p>Rich, creamy formulations that absorb beautifully while leaving your skin silky smooth and delicately scented with our signature blends.</p>
+                </div>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="product-visual">🧼</div>
+                <div class="product-details">
+                    <h3>Handcrafted Soaps</h3>
+                    <p>Artisanal bars made with natural ingredients and essential oils, each one unique in color, texture, and fragrance for a truly personal experience.</p>
+                </div>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="product-visual">🛁</div>
+                <div class="product-details">
+                    <h3>Effervescent Bath Bombs</h3>
+                    <p>Transform your bath into a luxurious retreat with our fizzing spheres that release moisturizing oils and enchanting fragrances.</p>
+                </div>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="product-visual">🧽</div>
+                <div class="product-details">
+                    <h3>Exfoliating Scrubs</h3>
+                    <p>Gentle yet effective scrubs that polish away dullness while infusing your skin with nourishing oils for a radiant, healthy glow.</p>
+                </div>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="product-visual">🕯️</div>
+                <div class="product-details">
+                    <h3>Aromatherapy Candles</h3>
+                    <p>Hand-poured soy candles that fill your space with calming scents, creating the perfect ambiance for your personal spa experience.</p>
+                </div>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="product-visual">💆</div>
+                <div class="product-details">
+                    <h3>Spa Gift Sets</h3>
+                    <p>Beautifully curated collections that combine our finest products in elegant packaging, perfect for gifting or treating yourself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spa Experience Section -->
+    <section class="spa-section">
+        <div class="spa-content">
+            <h2>Your Personal Sanctuary</h2>
+            <p>Every bath becomes a transformative ritual when you surround yourself with our carefully crafted luxuries. From the moment you light one of our candles to the final touch of our nourishing lotions, experience the ultimate in self-care.</p>
+            
+            <div class="spa-features">
+                <div class="spa-feature">
+                    <h4>Stress Relief</h4>
+                    <p>Melt away tension with our calming botanical blends</p>
+                </div>
+                <div class="spa-feature">
+                    <h4>Skin Nourishment</h4>
+                    <p>Deep hydration and repair with natural ingredients</p>
+                </div>
+                <div class="spa-feature">
+                    <h4>Sensory Delight</h4>
+                    <p>Enchanting fragrances that uplift and inspire</p>
+                </div>
+                <div class="spa-feature">
+                    <h4>Me-Time Ritual</h4>
+                    <p>Create sacred moments of peace in your busy day</p>
+                </div>
+            </div>
+            
+            <p>Whether you're preparing for a special occasion or simply treating yourself to daily luxury, our Bath & Body collection transforms the ordinary into the extraordinary.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Indulge in Luxury Today</h2>
+            <p>Discover the art of self-care with our exquisite Bath & Body collection. Each product is crafted with love and designed to elevate your daily routine into a spa-worthy experience.</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="cta-btn cta-btn-primary">Visit Our Spa Boutique</a>
+                <a href="index.html#contact" class="cta-btn cta-btn-secondary">Create Custom Set</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#shop">Collections</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="mailto:hello@atadofpizzazz.com">Email Us</a>
+        </div>
+        <p>&copy; 2025 A Tad of Pizzazz. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Handcrafted with love in Rumford, RI</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Spa-like hover effects
+            const showcaseCards = document.querySelectorAll('.product-showcase');
+            showcaseCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) rotate(-1deg) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+                });
+            });
+            
+            // Gentle parallax effect for bubbles
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero::before');
+                if (hero) {
+                    document.querySelector('.hero').style.setProperty('--scroll', scrolled * 0.5 + 'px');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
