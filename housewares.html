@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housewares | A Tad of Pizzazz</title>
+    <meta name="description" content="Charming home decor and functional pieces that bring warmth and character to your living space at A Tad of Pizzazz.">
+    
+    <style>
+        :root {
+            --primary: #C71585;
+            --secondary: #FF69B4;
+            --accent: #FFB6C1;
+            --light-pink: #FFF0F5;
+            --gold: #FFD700;
+            --text-dark: #2F2F2F;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --warm-beige: #F5F5DC;
+            --rust: #CD853F;
+            --sage-green: #87A96B;
+            --cream: #FFFDD0;
+            --terracotta: #E07A5F;
+            --burnt-orange: #CC5500;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Libre Baskerville', 'Georgia', serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 30%, var(--sage-green) 70%, var(--rust) 100%);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(139, 69, 19, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        nav a:hover {
+            background: rgba(255, 253, 208, 0.2);
+            color: var(--warm-beige);
+            transform: translateY(-2px);
+        }
+        
+        .nav-logo {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--rust) 0%, var(--terracotta) 30%, var(--sage-green) 70%, var(--warm-beige) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><pattern id="home-pattern" patternUnits="userSpaceOnUse" width="80" height="80"><rect width="80" height="80" fill="none"/><path d="M40 20 L60 40 L40 60 L20 40 Z" fill="white" opacity="0.1"/><circle cx="40" cy="40" r="3" fill="white" opacity="0.2"/><rect x="35" y="10" width="10" height="10" fill="white" opacity="0.15" rx="2"/><rect x="35" y="60" width="10" height="10" fill="white" opacity="0.15" rx="2"/><rect x="10" y="35" width="10" height="10" fill="white" opacity="0.15" rx="2"/><rect x="60" y="35" width="10" height="10" fill="white" opacity="0.15" rx="2"/></pattern></defs><rect width="400" height="400" fill="url(%23home-pattern)"/></svg>');
+            animation: homeFloat 25s linear infinite;
+        }
+        
+        @keyframes homeFloat {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-80px) translateY(-80px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 3px;
+        }
+        
+        .hero-tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--warm-beige);
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+        
+        /* Warmth Features */
+        .warmth-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 50%, var(--warm-beige) 100%);
+            position: relative;
+        }
+        
+        .warmth-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cozy-texture" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="none"/><circle cx="5" cy="5" r="1" fill="saddlebrown" opacity="0.1"/><circle cx="15" cy="15" r="1.5" fill="peru" opacity="0.08"/><circle cx="10" cy="18" r="1" fill="burlywood" opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23cozy-texture)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3.2rem;
+            color: var(--rust);
+            margin-bottom: 4rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title::after {
+            content: '🏠 ✦ 🏠';
+            display: block;
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+        
+        .warmth-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .warmth-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--cream) 100%);
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(139, 69, 19, 0.15);
+            border: 3px solid var(--sage-green);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .warmth-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(135, 169, 107, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .warmth-card:hover::before {
+            opacity: 1;
+        }
+        
+        .warmth-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(139, 69, 19, 0.2);
+            border-color: var(--terracotta);
+        }
+        
+        .warmth-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--rust), var(--terracotta));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.3);
+        }
+        
+        .warmth-card h3 {
+            font-size: 1.6rem;
+            color: var(--rust);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .warmth-card p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Home Collection */
+        .home-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--sage-green) 0%, var(--terracotta) 30%, var(--warm-beige) 70%, var(--cream) 100%);
+        }
+        
+        .home-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .home-showcase {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 2px solid var(--warm-beige);
+        }
+        
+        .home-showcase::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(135, 169, 107, 0.1) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .home-showcase:hover::after {
+            opacity: 1;
+        }
+        
+        .home-showcase:hover {
+            transform: translateY(-12px) rotate(-1deg);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            border-color: var(--rust);
+        }
+        
+        .home-visual {
+            height: 280px;
+            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--rust) 50%, var(--sage-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .home-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="wood-grain" patternUnits="userSpaceOnUse" width="60" height="8"><rect width="60" height="8" fill="none"/><path d="M0 4 Q15 2 30 4 T60 4" stroke="white" stroke-width="0.5" fill="none" opacity="0.2"/><path d="M0 6 Q20 5 40 6 T60 6" stroke="white" stroke-width="0.3" fill="none" opacity="0.15"/></pattern></defs><rect width="60" height="60" fill="url(%23wood-grain)"/></svg>');
+            animation: woodGrain 20s linear infinite;
+        }
+        
+        @keyframes woodGrain {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-60px); }
+        }
+        
+        .home-details {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .home-details h3 {
+            font-size: 1.4rem;
+            color: var(--rust);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .home-details p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        /* Comfort Section */
+        .comfort-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .comfort-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><radialGradient id="warm-glow1"><stop offset="0%" stop-color="peru" stop-opacity="0.1"/><stop offset="100%" stop-color="peru" stop-opacity="0"/></radialGradient><radialGradient id="warm-glow2"><stop offset="0%" stop-color="saddlebrown" stop-opacity="0.08"/><stop offset="100%" stop-color="saddlebrown" stop-opacity="0"/></radialGradient></defs><circle cx="50" cy="50" r="25" fill="url(%23warm-glow1)"><animate attributeName="r" values="25;35;25" dur="8s" repeatCount="indefinite"/></circle><circle cx="150" cy="150" r="30" fill="url(%23warm-glow2)"><animate attributeName="r" values="30;20;30" dur="10s" repeatCount="indefinite"/></circle><circle cx="150" cy="50" r="20" fill="url(%23warm-glow1)"><animate attributeName="r" values="20;30;20" dur="12s" repeatCount="indefinite"/></circle></svg>');
+            opacity: 0.6;
+        }
+        
+        .comfort-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .comfort-content h2 {
+            font-size: 3.2rem;
+            color: var(--rust);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .comfort-content p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+        
+        .comfort-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .comfort-feature {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            border-radius: 20px;
+            border: 2px solid var(--sage-green);
+            transition: all 0.3s ease;
+        }
+        
+        .comfort-feature:hover {
+            transform: translateY(-5px);
+            border-color: var(--terracotta);
+            box-shadow: 0 15px 30px rgba(135, 169, 107, 0.2);
+        }
+        
+        .comfort-feature h4 {
+            color: var(--rust);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--rust) 0%, var(--terracotta) 30%, var(--sage-green) 70%, var(--burnt-orange) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '🏠';
+            position: absolute;
+            font-size: 12rem;
+            color: rgba(255, 253, 208, 0.1);
+            top: 10%;
+            left: 5%;
+            animation: homeGlow 12s ease-in-out infinite;
+        }
+        
+        .cta-section::after {
+            content: '🕯️';
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(245, 245, 220, 0.1);
+            bottom: 15%;
+            right: 10%;
+            animation: candleFlicker 8s ease-in-out infinite;
+        }
+        
+        @keyframes homeGlow {
+            0%, 100% { opacity: 0.1; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.2; transform: scale(1.1) rotate(5deg); }
+        }
+        
+        @keyframes candleFlicker {
+            0%, 100% { opacity: 0.1; transform: scale(1); }
+            25% { opacity: 0.15; transform: scale(1.05); }
+            75% { opacity: 0.08; transform: scale(0.98); }
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+        
+        .cta-btn-primary {
+            background: var(--cream);
+            color: var(--rust);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--cream);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+        
+        .cta-btn-primary:hover {
+            background: var(--warm-beige);
+            box-shadow: 0 20px 40px rgba(245, 245, 220, 0.3);
+        }
+        
+        .cta-btn-secondary:hover {
+            background: var(--cream);
+            color: var(--rust);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--sage-green);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--terracotta);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+            
+            .warmth-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .warmth-card {
+                padding: 2rem;
+            }
+            
+            .home-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comfort-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-logo {
+                height: 30px;
+                left: 1rem;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--rust), var(--sage-green));
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--terracotta), var(--burnt-orange));
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="Tadd-Logo.png" alt="A Tad of Pizzazz Logo" class="nav-logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bath-body.html">Bath & Body</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="housewares.html">Housewares</a></li>
+            <li><a href="confaketionary.html">Confaketionary</a></li>
+            <li><a href="hair-flair.html">Hair Flair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Housewares Collection</h1>
+            <p class="hero-tagline">Where comfort meets style in every corner of your home</p>
+        </div>
+    </section>
+
+    <!-- Warmth Features Section -->
+    <section class="warmth-section">
+        <h2 class="section-title">Creating Warmth & Character</h2>
+        <div class="warmth-grid">
+            <div class="warmth-card">
+                <div class="warmth-icon">🏺</div>
+                <h3>Artisan Crafted</h3>
+                <p>Each piece is carefully selected for its unique character and artisan quality, bringing authentic handmade charm to your living spaces with attention to detail and craftsmanship.</p>
+            </div>
+            
+            <div class="warmth-card">
+                <div class="warmth-icon">🌿</div>
+                <h3>Natural Materials</h3>
+                <p>We prioritize pieces made from sustainable, natural materials that age beautifully and bring organic warmth to your home while supporting eco-conscious living.</p>
+            </div>
+            
+            <div class="warmth-card">
+                <div class="warmth-icon">✨</div>
+                <h3>Functional Beauty</h3>
+                <p>Our housewares seamlessly blend form and function, ensuring that every beautiful piece also serves a practical purpose in your daily home life and organization.</p>
+            </div>
+            
+            <div class="warmth-card">
+                <div class="warmth-icon">🏠</div>
+                <h3>Timeless Appeal</h3>
+                <p>Classic designs that transcend trends, our collection offers pieces that will remain beautiful and relevant for years to come, creating lasting value in your home.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Collection -->
+    <section class="home-section">
+        <h2 class="section-title" style="color: var(--cream);">Curated Home Collection</h2>
+        <div class="home-grid">
+            <div class="home-showcase">
+                <div class="home-visual">🕯️</div>
+                <div class="home-details">
+                    <h3>Ambient Lighting</h3>
+                    <p>Beautiful candles, lanterns, and decorative lighting that create the perfect atmosphere for any occasion, from intimate dinners to cozy reading nooks.</p>
+                </div>
+            </div>
+            
+            <div class="home-showcase">
+                <div class="home-visual">🏺</div>
+                <div class="home-details">
+                    <h3>Decorative Vessels</h3>
+                    <p>Stunning vases, bowls, and pottery pieces that serve as both functional storage and beautiful focal points throughout your home.</p>
+                </div>
+            </div>
+            
+            <div class="home-showcase">
+                <div class="home-visual">🖼️</div>
+                <div class="home-details">
+                    <h3>Wall Art & Decor</h3>
+                    <p>Carefully curated artwork, mirrors, and wall hangings that reflect your personal style and add visual interest to your walls.</p>
+                </div>
+            </div>
+            
+            <div class="home-showcase">
+                <div class="home-visual">🧺</div>
+                <div class="home-details">
+                    <h3>Storage Solutions</h3>
+                    <p>Stylish baskets, boxes, and organizers that help keep your home tidy while adding texture and warmth to your decor.</p>
+                </div>
+            </div>
+            
+            <div class="home-showcase">
+                <div class="home-visual">🍽️</div>
+                <div class="home-details">
+                    <h3>Dining & Kitchen</h3>
+                    <p>Beautiful serving pieces, unique dishware, and kitchen accessories that make every meal feel special and bring joy to cooking.</p>
+                </div>
+            </div>
+            
+            <div class="home-showcase">
+                <div class="home-visual">🪴</div>
+                <div class="home-details">
+                    <h3>Plant & Garden</h3>
+                    <p>Charming planters, garden accessories, and plant care items that help you bring the beauty of nature indoors and out.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comfort Section -->
+    <section class="comfort-section">
+        <div class="comfort-content">
+            <h2>Your Home, Your Sanctuary</h2>
+            <p>We believe that your home should be a reflection of who you are and a place where you feel completely at peace. Our Housewares collection is thoughtfully curated to help you create spaces that nurture your soul and welcome your loved ones.</p>
+            
+            <div class="comfort-features">
+                <div class="comfort-feature">
+                    <h4>Cozy Atmosphere</h4>
+                    <p>Create warm, inviting spaces that feel like home</p>
+                </div>
+                <div class="comfort-feature">
+                    <h4>Personal Expression</h4>
+                    <p>Reflect your unique style in every room</p>
+                </div>
+                <div class="comfort-feature">
+                    <h4>Practical Beauty</h4>
+                    <p>Enjoy items that are both useful and lovely</p>
+                </div>
+                <div class="comfort-feature">
+                    <h4>Quality Materials</h4>
+                    <p>Invest in pieces that will last for years</p>
+                </div>
+            </div>
+            
+            <p>From the kitchen to the living room, bedroom to garden, our collection offers something special for every space in your home. Each piece is chosen not just for its beauty, but for its ability to enhance your daily living experience.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Transform Your Space Today</h2>
+            <p>Discover how the right pieces can completely transform the feel of your home. Visit our boutique to explore our full Housewares collection and find the perfect items to make your house feel like the sanctuary you deserve.</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="cta-btn cta-btn-primary">Visit Our Home Boutique</a>
+                <a href="index.html#contact" class="cta-btn cta-btn-secondary">Home Styling Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#shop">Collections</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="mailto:hello@atadofpizzazz.com">Email Us</a>
+        </div>
+        <p>&copy; 2025 A Tad of Pizzazz. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Handcrafted with love in Rumford, RI</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Cozy hover effects
+            const showcases = document.querySelectorAll('.home-showcase');
+            showcases.forEach(showcase => {
+                showcase.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-12px) rotate(-1deg) scale(1.02)';
+                });
+                
+                showcase.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+                });
+            });
+            
+            // Gentle parallax for home elements
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const homePattern = document.querySelector('.hero::before');
+                if (homePattern) {
+                    document.querySelector('.hero').style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
