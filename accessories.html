@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories & Adornments | A Tad of Pizzazz</title>
+    <meta name="description" content="Unique jewelry and accessories that add the perfect finishing touch to any outfit at A Tad of Pizzazz.">
+    
+    <style>
+        :root {
+            --primary: #C71585;
+            --secondary: #FF69B4;
+            --accent: #FFB6C1;
+            --light-pink: #FFF0F5;
+            --gold: #FFD700;
+            --text-dark: #2F2F2F;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --black: #1C1C1C;
+            --silver: #C0C0C0;
+            --rose-gold: #E8B4B8;
+            --platinum: #E5E4E2;
+            --diamond: #F8F8FF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--black) 0%, var(--text-dark) 30%, var(--silver) 70%, var(--platinum) 100%);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(28, 28, 28, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--gold);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        
+        nav a:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        nav a:hover {
+            color: var(--black);
+        }
+        
+        .nav-logo {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: auto;
+            border-radius: 8px;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 8rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--black) 0%, var(--text-dark) 50%, var(--rose-gold) 100%);
+            color: var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><defs><radialGradient id="diamond1"><stop offset="0%" stop-color="white" stop-opacity="0.8"/><stop offset="30%" stop-color="gold" stop-opacity="0.6"/><stop offset="100%" stop-color="gold" stop-opacity="0"/></radialGradient><radialGradient id="diamond2"><stop offset="0%" stop-color="silver" stop-opacity="0.7"/><stop offset="50%" stop-color="white" stop-opacity="0.4"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><polygon points="50,80 70,60 90,80 70,100" fill="url(%23diamond1)" opacity="0.4"><animateTransform attributeName="transform" type="rotate" values="0 70 80;360 70 80" dur="20s" repeatCount="indefinite"/></polygon><polygon points="200,150 220,130 240,150 220,170" fill="url(%23diamond2)" opacity="0.5"><animateTransform attributeName="transform" type="rotate" values="0 220 150;-360 220 150" dur="25s" repeatCount="indefinite"/></polygon><polygon points="120,220 140,200 160,220 140,240" fill="url(%23diamond1)" opacity="0.3"><animateTransform attributeName="transform" type="rotate" values="0 140 220;360 140 220" dur="30s" repeatCount="indefinite"/></polygon><circle cx="250" cy="80" r="3" fill="gold" opacity="0.6"><animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="250" r="2" fill="silver" opacity="0.7"><animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/></circle></svg>');
+            animation: sparkle 15s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--gold), var(--silver), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            letter-spacing: 4px;
+        }
+        
+        .hero-tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--platinum);
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+        
+        /* Elegance Features */
+        .elegance-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--diamond) 0%, var(--platinum) 50%, var(--white) 100%);
+            position: relative;
+        }
+        
+        .elegance-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 49%, rgba(192, 192, 192, 0.1) 50%, transparent 51%);
+            background-size: 60px 60px;
+            animation: shineMove 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes shineMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 60px; }
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--gold), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title::after {
+            content: '✦ ✧ ✦';
+            display: block;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-top: 1rem;
+            letter-spacing: 1rem;
+        }
+        
+        .elegance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .elegance-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--diamond) 100%);
+            padding: 3rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--silver);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .elegance-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent, rgba(192, 192, 192, 0.1), transparent);
+            animation: elegantRotate 15s linear infinite;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        @keyframes elegantRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .elegance-card:hover::before {
+            opacity: 1;
+        }
+        
+        .elegance-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(199, 21, 133, 0.2);
+            border-color: var(--gold);
+        }
+        
+        .elegance-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 15px 30px rgba(199, 21, 133, 0.3);
+        }
+        
+        .elegance-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1px;
+        }
+        
+        .elegance-card p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Collection Showcase */
+        .showcase-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--black) 0%, var(--text-dark) 30%, var(--silver) 70%, var(--diamond) 100%);
+        }
+        
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .jewelry-showcase {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 3px solid var(--silver);
+        }
+        
+        .jewelry-showcase::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 215, 0, 0.1) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .jewelry-showcase:hover::after {
+            opacity: 1;
+        }
+        
+        .jewelry-showcase:hover {
+            transform: translateY(-20px) rotate(2deg);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+            border-color: var(--gold);
+        }
+        
+        .jewelry-visual {
+            height: 300px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--primary) 50%, var(--rose-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .jewelry-visual::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: diamondPattern 25s linear infinite;
+        }
+        
+        @keyframes diamondPattern {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-20px, -20px) rotate(360deg); }
+        }
+        
+        .jewelry-details {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .jewelry-details h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .jewelry-details p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        /* Statement Section */
+        .statement-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .statement-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="luxury-pattern" patternUnits="userSpaceOnUse" width="40" height="40"><circle cx="20" cy="20" r="1" fill="gold" opacity="0.3"/><circle cx="10" cy="10" r="0.5" fill="silver" opacity="0.4"/><circle cx="30" cy="10" r="0.5" fill="gold" opacity="0.3"/><circle cx="10" cy="30" r="0.5" fill="silver" opacity="0.4"/><circle cx="30" cy="30" r="0.5" fill="gold" opacity="0.3"/></pattern></defs><rect width="200" height="200" fill="url(%23luxury-pattern)"/></svg>');
+            animation: luxuryFloat 30s linear infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes luxuryFloat {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-40px, -40px); }
+        }
+        
+        .statement-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .statement-content h2 {
+            font-size: 3.2rem;
+            background: linear-gradient(45deg, var(--primary), var(--gold), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .statement-content p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+        
+        .statement-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .statement-feature {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--diamond) 0%, var(--platinum) 100%);
+            border-radius: 20px;
+            border: 2px solid var(--silver);
+            transition: all 0.3s ease;
+        }
+        
+        .statement-feature:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 30px rgba(199, 21, 133, 0.1);
+        }
+        
+        .statement-feature h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--black) 0%, var(--primary) 50%, var(--gold) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '✦';
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(255, 215, 0, 0.1);
+            top: 20%;
+            left: 10%;
+            animation: starTwinkle 8s ease-in-out infinite;
+        }
+        
+        .cta-section::after {
+            content: '✧';
+            position: absolute;
+            font-size: 6rem;
+            color: rgba(192, 192, 192, 0.1);
+            bottom: 20%;
+            right: 15%;
+            animation: starTwinkle 10s ease-in-out infinite reverse;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.1; transform: rotate(0deg) scale(1); }
+            50% { opacity: 0.3; transform: rotate(180deg) scale(1.2); }
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+            letter-spacing: 1px;
+        }
+        
+        .cta-btn-primary {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--silver);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+        
+        .cta-btn-primary:hover {
+            background: #FFC700;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+        }
+        
+        .cta-btn-secondary:hover {
+            background: var(--silver);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--silver);
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+            
+            .elegance-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .elegance-card {
+                padding: 2rem;
+            }
+            
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .statement-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-logo {
+                height: 30px;
+                left: 1rem;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--black);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold), var(--silver));
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--primary), var(--gold));
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="Tadd-Logo.png" alt="A Tad of Pizzazz Logo" class="nav-logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bath-body.html">Bath & Body</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="housewares.html">Housewares</a></li>
+            <li><a href="confaketionary.html">Confaketionary</a></li>
+            <li><a href="hair-flair.html">Hair Flair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Accessories & Adornments</h1>
+            <p class="hero-tagline">Where elegance meets artistry in every exquisite piece</p>
+        </div>
+    </section>
+
+    <!-- Elegance Features Section -->
+    <section class="elegance-section">
+        <h2 class="section-title">Crafted for Distinction</h2>
+        <div class="elegance-grid">
+            <div class="elegance-card">
+                <div class="elegance-icon">💎</div>
+                <h3>Artisan Quality</h3>
+                <p>Each piece is meticulously crafted by skilled artisans using premium materials and time-honored techniques that ensure lasting beauty and exceptional quality.</p>
+            </div>
+            
+            <div class="elegance-card">
+                <div class="elegance-icon">✨</div>
+                <h3>Unique Designs</h3>
+                <p>Our collection features one-of-a-kind designs that you won't find anywhere else, from vintage-inspired classics to contemporary statement pieces.</p>
+            </div>
+            
+            <div class="elegance-card">
+                <div class="elegance-icon">👑</div>
+                <h3>Statement Pieces</h3>
+                <p>Transform any outfit from ordinary to extraordinary with our carefully curated selection of bold, eye-catching accessories that speak to your personal style.</p>
+            </div>
+            
+            <div class="elegance-card">
+                <div class="elegance-icon">🎭</div>
+                <h3>Versatile Elegance</h3>
+                <p>Whether dressing up for a special occasion or adding flair to your everyday look, our pieces effortlessly transition from day to night with timeless appeal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Showcase -->
+    <section class="showcase-section">
+        <h2 class="section-title" style="color: var(--gold);">Exquisite Collection</h2>
+        <div class="showcase-grid">
+            <div class="jewelry-showcase">
+                <div class="jewelry-visual">💍</div>
+                <div class="jewelry-details">
+                    <h3>Statement Rings</h3>
+                    <p>Bold, beautiful rings that command attention and express your unique personality with every gesture.</p>
+                </div>
+            </div>
+            
+            <div class="jewelry-showcase">
+                <div class="jewelry-visual">📿</div>
+                <div class="jewelry-details">
+                    <h3>Artisan Necklaces</h3>
+                    <p>From delicate pendants to dramatic statement pieces, our necklaces add the perfect finishing touch to any neckline.</p>
+                </div>
+            </div>
+            
+            <div class="jewelry-showcase">
+                <div class="jewelry-visual">👂</div>
+                <div class="jewelry-details">
+                    <h3>Elegant Earrings</h3>
+                    <p>Frame your face beautifully with our collection of earrings, from subtle studs to glamorous chandeliers.</p>
+                </div>
+            </div>
+            
+            <div class="jewelry-showcase">
+                <div class="jewelry-visual">⌚</div>
+                <div class="jewelry-details">
+                    <h3>Vintage Bracelets</h3>
+                    <p>Adorn your wrists with our curated collection of bracelets that blend vintage charm with contemporary style.</p>
+                </div>
+            </div>
+            
+            <div class="jewelry-showcase">
+                <div class="jewelry-visual">🧷</div>
+                <div class="jewelry-details">
+                    <h3>Distinctive Brooches</h3>
+                    <p>Make a sophisticated statement with our collection of brooches and pins that add personality to any outfit.</p>
+                </div>
+            </div>
+            
+            <div class="jewelry-showcase">
+                <div class="jewelry-visual">👜</div>
+                <div class="jewelry-details">
+                    <h3>Curated Accessories</h3>
+                    <p>Complete your look with our carefully selected scarves, bags, and other accessories that complement our jewelry line.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statement Section -->
+    <section class="statement-section">
+        <div class="statement-content">
+            <h2>Express Your Unique Style</h2>
+            <p>Every accessory tells a story, and every piece in our collection is chosen to help you write yours. From everyday elegance to show-stopping glamour, our Accessories & Adornments collection celebrates the art of personal expression.</p>
+            
+            <div class="statement-features">
+                <div class="statement-feature">
+                    <h4>Timeless Appeal</h4>
+                    <p>Classic designs that never go out of style</p>
+                </div>
+                <div class="statement-feature">
+                    <h4>Premium Materials</h4>
+                    <p>Quality craftsmanship using the finest components</p>
+                </div>
+                <div class="statement-feature">
+                    <h4>Personal Expression</h4>
+                    <p>Pieces that reflect your individual personality</p>
+                </div>
+                <div class="statement-feature">
+                    <h4>Perfect Gifts</h4>
+                    <p>Treasured presents for life's special moments</p>
+                </div>
+            </div>
+            
+            <p>Whether you're treating yourself to something special or searching for the perfect gift, our collection offers pieces that will be treasured for years to come.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Discover Your Signature Piece</h2>
+            <p>Step into our boutique and explore a world where craftsmanship meets artistry. Each piece in our Accessories & Adornments collection is waiting to become part of your story.</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="cta-btn cta-btn-primary">Visit Our Boutique</a>
+                <a href="index.html#contact" class="cta-btn cta-btn-secondary">Personal Styling</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#shop">Collections</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="mailto:hello@atadofpizzazz.com">Email Us</a>
+        </div>
+        <p>&copy; 2025 A Tad of Pizzazz. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Handcrafted with love in Rumford, RI</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Elegant hover effects for jewelry showcases
+            const showcases = document.querySelectorAll('.jewelry-showcase');
+            showcases.forEach(showcase => {
+                showcase.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-20px) rotate(2deg) scale(1.02)';
+                });
+                
+                showcase.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+                });
+            });
+            
+            // Sparkle effect on scroll
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const diamonds = document.querySelectorAll('.hero::before');
+                diamonds.forEach(diamond => {
+                    diamond.style.transform = `translateY(${scrolled * 0.3}px) scale(${1 + scrolled * 0.0001})`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
