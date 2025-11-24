@@ -3,36 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Tad of Pizzazz - Whimsical gift shop in East Providence, RI featuring handcrafted items, bath & body products, Hair Flair accessories, The Confaketionary, and unique home decor.">
-    <meta name="keywords" content="gift shop East Providence RI, boutique Rhode Island, handcrafted gifts, bath and body, hair accessories, fascinators, Confaketionary, baby gifts, housewares, whimsical gifts, Newport Avenue">
+    <meta name="description" content="A Tad of Pizzazz - Whimsical gift shop in Rumford, RI featuring handcrafted items, bath & body products, Hair Flair accessories, The Confaketionary, and unique home decor.">
+    <meta name="keywords" content="A Tad of Pizzazz, Rumford RI, gift shop, handcrafted items, baby gifts, bath body products, hair accessories, home decor, unique gifts">
     <meta name="author" content="A Tad of Pizzazz">
-    <meta property="og:title" content="A Tad of Pizzazz - Whimsical Gift Shop & Boutique in East Providence, RI">
-    <meta property="og:description" content="Discover handcrafted treasures and unique gifts at our whimsical boutique. Bath & body, Hair Flair, The Confaketionary, and more!">
+    <title>A Tad of Pizzazz | Whimsical Gifts & Handcrafted Treasures in Rumford, RI</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="A Tad of Pizzazz | Whimsical Gifts & Handcrafted Treasures">
+    <meta property="og:description" content="Discover unique handcrafted gifts, bath & body products, Hair Flair accessories, and The Confaketionary treats at our Rumford, RI boutique.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourusername.github.io/pizzazz/">
-    <meta property="og:image" content="https://yourusername.github.io/pizzazz/logo.png">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <title>A Tad of Pizzazz | Whimsical Gift Shop & Boutique in East Providence, RI</title>
-    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Fonts matching the actual website -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --dark-pink: #C71585;
-            --pink: #FF69B4;
-            --light-pink: #FFB6D9;
-            --pale-pink: #FFF0F5;
-            --white: #FFFFFF;
+            --primary: #C71585;
+            --secondary: #FF69B4;
+            --accent: #FFB6C1;
+            --light-pink: #FFF0F5;
             --gold: #FFD700;
-            --navy: #2C3E50;
-            --text-dark: #2C3E50;
-            --text-light: #666666;
+            --text-dark: #2F2F2F;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --dark: #1a1a1a;
         }
         
         * {
@@ -42,344 +34,398 @@
         }
         
         body {
-            font-family: 'Mulish', sans-serif;
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
             color: var(--text-dark);
-            line-height: 1.7;
             overflow-x: hidden;
-            background: var(--white);
         }
         
-        /* Navigation - Dark Pink Bar */
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #C71585;
+            background: var(--primary);
             z-index: 1000;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(199,21,133,0.3);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(199, 21, 133, 0.2);
         }
         
         nav ul {
-            list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
+            align-items: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
         }
         
         nav a {
             color: var(--white);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s;
-            position: relative;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
         
         nav a:hover {
-            color: var(--light-pink);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
         }
         
-        /* Hero Section with Pink Gradient */
+        /* Logo in Navigation */
+        .nav-logo {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        /* Hero Section */
         .hero {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             min-height: 100vh;
-            background: linear-gradient(135deg, #FF69B4 0%, #FFB6D9 50%, #FFF0F5 100%);
-            position: relative;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
-            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            padding: 0 2rem;
         }
         
         .hero::before {
             content: '';
             position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2px);
-            background-size: 50px 50px;
-            animation: floatPattern 30s linear infinite;
-            opacity: 0.3;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a"><stop offset="0" stop-color="%23ffffff" stop-opacity="0.3"/><stop offset="1" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="250" cy="250" r="100" fill="url(%23a)"/><circle cx="750" cy="750" r="150" fill="url(%23a)"/><circle cx="150" cy="700" r="80" fill="url(%23a)"/><circle cx="850" cy="200" r="120" fill="url(%23a)"/></svg>');
+            animation: float 20s infinite linear;
         }
         
-        @keyframes floatPattern {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(50px, 50px) rotate(360deg); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
         
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Logo Image */
-        .hero-logo {
-            max-width: 500px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 2rem;
-            filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.1));
-            animation: fadeInUp 1s ease-out 0.2s both;
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
-        }
-        
-        .hero .tagline {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            animation: fadeInUp 1s ease-out 0.4s both;
-            font-style: italic;
-            color: var(--white);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .hero .description {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease-out 0.6s both;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            color: var(--white);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: var(--white);
-            color: var(--dark-pink);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            animation: fadeInUp 1s ease-out 0.8s both;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 3px solid var(--white);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            background: var(--gold);
-            color: var(--dark-pink);
-        }
-        
-        /* Section Styling */
-        section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
-        .section-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 400;
+        .hero-images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .logo-main {
+            max-width: 200px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: logoFloat 6s ease-in-out infinite;
+        }
+        
+        .hero-main-image {
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: imageFloat 8s ease-in-out infinite;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        
+        @keyframes imageFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-2deg); }
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: slideInUp 1s ease-out 0.3s backwards;
+        }
+        
+        @keyframes slideInDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes slideInUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
             text-align: center;
-            color: var(--navy);
-            position: relative;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-weight: 700;
         }
         
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 150px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--pink), var(--light-pink));
-            margin: 1rem auto 3rem;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
-        /* Shop Categories Grid */
-        .categories-grid {
+        /* Shop Collections Section */
+        #shop {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+        
+        .collections-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
         
-        .category-card {
-            background: var(--white);
-            padding: 3rem 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(255,105,180,0.15);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-            text-align: left;
-            border-top: 4px solid var(--pink);
-        }
-        
-        .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(255,105,180,0.25);
-        }
-        
-        .category-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-        
-        .category-card h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--navy);
-            font-weight: 400;
-        }
-        
-        .category-card p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-light);
-        }
-        
-        .category-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--pink);
-            font-weight: 700;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .category-link:hover {
-            color: var(--light-pink);
-        }
-        
-        /* About Section - Light Pink Background */
-        #about {
-            background: var(--pale-pink);
-        }
-        
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Events Section - Pink Background */
-        #events {
-            background: linear-gradient(135deg, var(--light-pink) 0%, var(--pale-pink) 100%);
-        }
-        
-        .events-cta {
-            text-align: center;
-            padding: 3rem;
+        .collection-card {
             background: var(--white);
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255,105,180,0.2);
-            max-width: 700px;
-            margin: 0 auto;
-            border: 3px solid var(--pink);
-        }
-        
-        .events-cta h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--navy);
-        }
-        
-        .events-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--pink);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-radius: 50px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(199, 21, 133, 0.1);
+            border: 3px solid var(--accent);
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
         }
         
-        .events-button:hover {
-            background: var(--light-pink);
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.8s;
+        }
+        
+        .collection-card:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(199, 21, 133, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .collection-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .collection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        
+        .collection-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .collection-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .shop-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .shop-btn:hover {
+            background: var(--secondary);
             transform: scale(1.05);
         }
         
-        /* Gallery Preview - White Background */
+        /* About Section */
+        #about {
+            padding: 6rem 0;
+            background: var(--light-pink);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(199, 21, 133, 0.2);
+        }
+        
+        .about-text h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        
+        /* Events Section */
+        #events {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .events-cta {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .events-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .events-button {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 1.5rem;
+        }
+        
+        .events-button:hover {
+            background: #FFC700;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Gallery Section */
         #gallery-preview {
+            padding: 6rem 0;
             background: var(--white);
         }
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
         
         .gallery-item {
             aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--pale-pink) 0%, var(--light-pink) 100%);
+            background: var(--accent);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            transition: transform 0.3s;
-            cursor: pointer;
-            border: 3px solid var(--pink);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
         }
         
         .gallery-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255,105,180,0.3);
+            box-shadow: 0 15px 30px rgba(199, 21, 133, 0.2);
         }
         
-        /* Quiz Section - Light Pink Background */
+        /* Quiz Section */
         #quiz {
-            background: var(--pale-pink);
+            padding: 6rem 0;
+            background: var(--light-pink);
         }
         
         .quiz-container {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             background: var(--white);
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255,105,180,0.2);
-            border: 3px solid var(--pink);
+            box-shadow: 0 15px 35px rgba(199, 21, 133, 0.1);
+            border: 2px solid var(--accent);
         }
         
         .quiz-question {
@@ -387,96 +433,67 @@
         }
         
         .quiz-question h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.5rem;
+            color: var(--primary);
             margin-bottom: 1rem;
-            color: var(--navy);
+            font-size: 1.2rem;
         }
         
         .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            display: grid;
+            gap: 0.5rem;
         }
         
         .quiz-option {
-            padding: 1rem;
-            background: var(--pale-pink);
-            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            background: var(--light-pink);
             border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
+            transition: all 0.3s ease;
         }
         
         .quiz-option:hover {
-            background: var(--light-pink);
-            border-color: var(--pink);
-            transform: translateX(5px);
+            background: var(--accent);
         }
         
-        .quiz-option input {
-            margin-right: 10px;
+        .quiz-option input[type="radio"] {
+            margin-right: 1rem;
+            accent-color: var(--primary);
         }
         
-        .quiz-submit {
-            width: 100%;
-            padding: 1.2rem;
-            background: var(--pink);
+        .submit-btn {
+            background: var(--primary);
             color: var(--white);
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 10px;
+            border-radius: 25px;
             font-size: 1.1rem;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
         }
         
-        .quiz-submit:hover {
-            background: var(--light-pink);
-            transform: scale(1.02);
+        .submit-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
         }
         
         .quiz-result {
-            display: none;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--pink) 0%, var(--light-pink) 100%);
-            border-radius: 15px;
             margin-top: 2rem;
-            text-align: center;
-            animation: slideIn 0.5s ease-out;
-            color: var(--white);
+            padding: 2rem;
+            background: var(--light-pink);
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            display: none;
         }
         
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .quiz-result h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-        
-        .quiz-result a {
-            color: var(--white);
-            font-weight: 700;
-        }
-        
-        /* Contact Section - Dark Pink Background */
+        /* Contact Section */
         #contact {
-            background: var(--dark-pink);
+            padding: 6rem 0;
+            background: var(--primary);
             color: var(--white);
         }
         
@@ -487,53 +504,43 @@
             align-items: start;
         }
         
-        @media (max-width: 768px) {
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            nav ul {
-                gap: 1rem;
-            }
-        }
-        
-        .contact-info {
-            font-size: 1.1rem;
-        }
-        
         .contact-info h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
             color: var(--gold);
         }
         
         .contact-info p {
             margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
+            font-size: 1.1rem;
         }
         
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
             margin-top: 2rem;
-            font-size: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
-        .social-links a {
-            color: var(--white);
-            transition: all 0.3s;
-            text-decoration: none;
-            background: rgba(255,255,255,0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .social-links a:hover {
-            background: var(--pink);
-            transform: scale(1.05);
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-form h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
         
         .contact-form input,
@@ -541,11 +548,17 @@
             width: 100%;
             padding: 1rem;
             margin-bottom: 1.5rem;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid var(--accent);
             border-radius: 10px;
-            font-family: 'Mulish', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             font-size: 1rem;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
         }
         
         .contact-form textarea {
@@ -556,8 +569,8 @@
         .contact-form button {
             width: 100%;
             padding: 1.2rem;
-            background: var(--white);
-            color: var(--dark-pink);
+            background: var(--gold);
+            color: var(--dark);
             border: none;
             border-radius: 10px;
             font-size: 1.1rem;
@@ -569,14 +582,14 @@
         }
         
         .contact-form button:hover {
-            background: var(--gold);
+            background: #FFC700;
             transform: scale(1.02);
         }
         
-        /* Footer - Dark Pink */
+        /* Footer */
         footer {
-            background: #A0166E;
-            color: var(--white);
+            background: #0A1929;
+            color: white;
             text-align: center;
             padding: 2rem;
         }
@@ -584,11 +597,6 @@
         footer a {
             color: var(--gold);
             text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        footer a:hover {
-            color: var(--light-pink);
         }
         
         .footer-links {
@@ -597,6 +605,53 @@
             gap: 2rem;
             flex-wrap: wrap;
             margin: 1rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-images {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .logo-main,
+            .hero-main-image {
+                max-width: 250px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-logo {
+                height: 30px;
+                left: 1rem;
+            }
+            
+            nav ul {
+                padding: 0 1rem;
+            }
+            
+            nav li {
+                margin: 0 0.5rem;
+            }
+            
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         /* Scroll Animation */
@@ -615,6 +670,7 @@
 <body>
     <!-- Navigation -->
     <nav>
+        <img src="Tadd-Logo.png" alt="A Tad of Pizzazz Logo" class="nav-logo">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
@@ -627,58 +683,82 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <img src="logo.png" alt="A Tad of Pizzazz Logo" class="hero-logo">
-            <p class="tagline">Discover the charm of our whimsical boutique!</p>
-            <p class="description">Stroll down this delightful lane where each turn reveals a hidden gem of carefully selected curated items and handcrafted creations.</p>
-            <a href="#shop" class="cta-button">Explore the Store</a>
+            <div class="hero-images">
+                <img src="Tadd-Logo.png" alt="A Tad of Pizzazz Logo" class="logo-main">
+                <img src="Tadd-HomePageImage.png" alt="A Tad of Pizzazz Store Front" class="hero-main-image">
+            </div>
+            <h1>A Tad of Pizzazz</h1>
+            <p>Where whimsy meets craftsmanship in every handcrafted treasure</p>
         </div>
     </section>
 
-    <!-- Shop Categories Section -->
+    <!-- Shop Collections Section -->
     <section id="shop">
-        <h2 class="section-title">Explore Our Collections</h2>
-        <div class="categories-grid fade-in-section">
-            <div class="category-card" id="bath-body">
-                <div class="category-icon">🛁</div>
-                <h3>Bath & Body</h3>
-                <p>A variety of personal care and home fragrance products to pamper yourself and create a spa-like atmosphere at home.</p>
-                <a href="#bath-body" class="category-link">Explore Bath & Body →</a>
-            </div>
-            <div class="category-card" id="accessories">
-                <div class="category-icon">✨</div>
-                <h3>Accessories & Adornments</h3>
-                <p>Ideal accents to enhance your personal style with jewelry, scarves, and unique pieces that make a statement.</p>
-                <a href="#accessories" class="category-link">Explore Accessories →</a>
-            </div>
-            <div class="category-card" id="housewares">
-                <div class="category-icon">🏠</div>
-                <h3>Housewares</h3>
-                <p>Decorative home accents, kitchenware and beyond to bring charm and functionality to every room.</p>
-                <a href="#housewares" class="category-link">Explore Housewares →</a>
-            </div>
-            <div class="category-card" id="confaketionary">
-                <div class="category-icon">🍰</div>
-                <h3>The Confaketionary</h3>
-                <p>Baby washcloths and socks transformed into sweet-looking confections - adorable and practical gifts!</p>
-                <a href="#confaketionary" class="category-link">Explore The Confaketionary →</a>
-            </div>
-            <div class="category-card" id="hair-flair">
-                <div class="category-icon">💐</div>
-                <h3>Hair Flair</h3>
-                <p>Hair accessories, custom-made fascinators and headpieces ranging from practical to fanciful designs.</p>
-                <a href="#hair-flair" class="category-link">Explore Hair Flair →</a>
+        <div class="container">
+            <h2 class="section-title">Explore Our Collections</h2>
+            <div class="collections-grid fade-in-section">
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="BathAndBody-Image.png" alt="Bath & Body Products">
+                    </div>
+                    <h3>Bath & Body</h3>
+                    <p>Luxurious, handcrafted bath products that transform your daily routine into a spa-like experience.</p>
+                    <a href="#contact" class="shop-btn">Explore Collection</a>
+                </div>
+
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="AccessoriesAndAdornments-Image.png" alt="Accessories and Adornments">
+                    </div>
+                    <h3>Accessories & Adornments</h3>
+                    <p>Unique jewelry and accessories that add the perfect finishing touch to any outfit.</p>
+                    <a href="#contact" class="shop-btn">Explore Collection</a>
+                </div>
+
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="Houseware-Image.png" alt="Housewares Collection">
+                    </div>
+                    <h3>Housewares</h3>
+                    <p>Charming home decor and functional pieces that bring warmth and character to your living space.</p>
+                    <a href="#contact" class="shop-btn">Explore Collection</a>
+                </div>
+
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="TheConfaketionary-Image.png" alt="The Confaketionary Items">
+                    </div>
+                    <h3>The Confaketionary</h3>
+                    <p>Whimsical treats and delightful surprises that look good enough to eat (but aren't meant to be!).</p>
+                    <a href="#contact" class="shop-btn">Explore Collection</a>
+                </div>
+
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="HairFlair-Image.png" alt="Hair Flair Accessories">
+                    </div>
+                    <h3>Hair Flair</h3>
+                    <p>Beautiful hair accessories and fascinators that add style and elegance to any look.</p>
+                    <a href="#contact" class="shop-btn">Explore Collection</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About A Tad of Pizzazz</h2>
-        <div class="about-content fade-in-section">
-            <div class="about-text">
-                <p>Welcome to <strong>A Tad of Pizzazz</strong>, a whimsical gift shop that offers a creative, fun shopping experience. The boutique goes beyond a simple store by filling its space with unique, handmade, and themed items that spark the imagination and delight the senses.</p>
-                <p>With thoughtful presentations and playful gifts, like creative baby items from The Confaketionary and stylish hair accessories from Hair Flair, the shop aims to be an experience of joy and discovery.</p>
-                <p>Every visit to our boutique is an adventure where carefully curated treasures await around every corner. From luxurious bath products to whimsical home decor, we believe in the power of small delights to brighten your day.</p>
+        <div class="container">
+            <div class="about-content fade-in-section">
+                <div class="about-image">
+                    <img src="AboutTadPizzaz-Image.png" alt="About A Tad of Pizzazz">
+                </div>
+                <div class="about-text">
+                    <h2>About A Tad of Pizzazz</h2>
+                    <p>Welcome to a world where creativity knows no bounds and every visit feels like discovering a hidden treasure chest. A Tad of Pizzazz is more than just a boutique; it's a celebration of the whimsical, the unique, and the beautifully crafted.</p>
+                    <p>A Tad of Pizzazz has been a familiar face at makers markets throughout Rhode Island, Massachusetts, and Connecticut for several years. Enthusiastic responses to the unique baby items and fascinators were always encouraging. The most frequent question was, "Where can we find your shop?" Our brick-and-mortar store officially opened in May 2025 at 65 Newport Avenue in Rumford, RI. Come experience the full range of handcrafted treasures!</p>
+                    <p>The boutique goes beyond a simple store by filling its space with unique, handmade, and themed items that spark the imagination and delight the senses. With thoughtful presentations and playful gifts, like creative baby items from The Confaketionary and stylish hair accessories from Hair Flair, the shop aims to be an experience of joy and discovery.</p>
+                    <p>Every visit to our boutique is an adventure where carefully curated treasures await around every corner. From luxurious bath products to whimsical home decor, we believe in the power of small delights to brighten your day.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -688,206 +768,289 @@
         <h2 class="section-title">Upcoming Events for 2025</h2>
         <div class="events-cta fade-in-section">
             <h3>Join us for special events, workshops, and seasonal celebrations!</h3>
-            <p style="margin: 1.5rem 0; font-size: 1.1rem; color: var(--text-dark);">From craft workshops to holiday celebrations, we host events throughout the year that bring our community together.</p>
+            <p style="margin: 1.5rem 0; font-size: 1.1rem; color: var(--white);">From craft workshops to holiday celebrations, we host events throughout the year that bring our community together.</p>
             <a href="#contact" class="events-button">Click Here to See Upcoming Events</a>
         </div>
     </section>
 
     <!-- Gallery Preview Section -->
     <section id="gallery-preview">
-        <h2 class="section-title">Gallery</h2>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-dark);">Peek into our whimsical world of handcrafted treasures and unique finds</p>
-        <div class="gallery-grid fade-in-section">
-            <div class="gallery-item">🎁</div>
-            <div class="gallery-item">💝</div>
-            <div class="gallery-item">🌸</div>
-            <div class="gallery-item">✨</div>
-            <div class="gallery-item">🎀</div>
-            <div class="gallery-item">🌺</div>
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-dark);">Peek into our whimsical world of handcrafted treasures and unique finds</p>
+            <div class="gallery-grid fade-in-section">
+                <div class="gallery-item">
+                    <img src="Gallary1-image.png" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallary2-Image.png" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallary3-Image.png" alt="Gallery Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallary4-Image.png" alt="Gallery Image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallary5-Image.png" alt="Gallery Image 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallary6-Image.png" alt="Gallery Image 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallary7-Image.png" alt="Gallery Image 7">
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--text-light);">Visit us in-store to see our full collection of handcrafted items and unique gifts!</p>
         </div>
-        <p style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--text-light);">Visit us in-store to see our full collection of handcrafted items and unique gifts!</p>
     </section>
 
     <!-- Quiz Section -->
     <section id="quiz">
-        <h2 class="section-title">Find Your Perfect Gift Style!</h2>
-        <div class="quiz-container fade-in-section">
-            <form id="pizzazz-quiz">
-                <div class="quiz-question">
-                    <h3>1. What type of gifts do you love most?</h3>
-                    <div class="quiz-options">
-                        <label class="quiz-option">
-                            <input type="radio" name="q1" value="a">
-                            Handcrafted and unique items
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q1" value="b">
-                            Practical items with personality
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q1" value="c">
-                            Luxurious pampering products
-                        </label>
+        <div class="container">
+            <h2 class="section-title">Find Your Perfect Gift Style!</h2>
+            <div class="quiz-container fade-in-section">
+                <form id="pizzazz-quiz">
+                    <div class="quiz-question">
+                        <h3>1. What's your ideal way to spend a weekend?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="bath">
+                                <span>Relaxing spa day at home</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="accessories">
+                                <span>Getting dressed up for a special event</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="housewares">
+                                <span>Redecorating and organizing my space</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="confaketionary">
+                                <span>Hosting a fun party with friends</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="hair">
+                                <span>Trying new hairstyles and looks</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quiz-question">
-                    <h3>2. What's your ideal shopping experience?</h3>
-                    <div class="quiz-options">
-                        <label class="quiz-option">
-                            <input type="radio" name="q2" value="a">
-                            Discovering hidden treasures
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q2" value="b">
-                            Browsing thoughtfully curated collections
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q2" value="c">
-                            Quick and convenient
-                        </label>
+                    <div class="quiz-question">
+                        <h3>2. Your favorite color palette is:</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="bath">
+                                <span>Soft pastels and calming blues</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="accessories">
+                                <span>Rich jewel tones and metallics</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="housewares">
+                                <span>Warm earth tones and neutrals</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="confaketionary">
+                                <span>Bright, playful, and bold colors</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="hair">
+                                <span>Classic black, white, and pops of color</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quiz-question">
-                    <h3>3. Which section would you explore first?</h3>
-                    <div class="quiz-options">
-                        <label class="quiz-option">
-                            <input type="radio" name="q3" value="a">
-                            Hair Flair (fascinators and accessories)
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q3" value="b">
-                            The Confaketionary (adorable baby gifts)
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q3" value="c">
-                            Bath & Body (pampering products)
-                        </label>
+                    <div class="quiz-question">
+                        <h3>3. When shopping for gifts, you look for:</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="bath">
+                                <span>Something luxurious and pampering</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="accessories">
+                                <span>Statement pieces that stand out</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="housewares">
+                                <span>Practical items with beautiful design</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="confaketionary">
+                                <span>Fun, quirky, conversation starters</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="hair">
+                                <span>Elegant accessories that enhance beauty</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quiz-question">
-                    <h3>4. What makes a gift special to you?</h3>
-                    <div class="quiz-options">
-                        <label class="quiz-option">
-                            <input type="radio" name="q4" value="a">
-                            It's one-of-a-kind and creative
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q4" value="b">
-                            The presentation and thoughtfulness
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q4" value="c">
-                            It's both beautiful and useful
-                        </label>
+                    <div class="quiz-question">
+                        <h3>4. Your perfect shopping experience includes:</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="bath">
+                                <span>Testing products and enjoying the scents</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="accessories">
+                                <span>Trying on pieces to see how they look</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="housewares">
+                                <span>Imagining items in your home</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="confaketionary">
+                                <span>Laughing and having fun with each discovery</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="hair">
+                                <span>Getting styling tips and inspiration</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quiz-question">
-                    <h3>5. What best describes your style?</h3>
-                    <div class="quiz-options">
-                        <label class="quiz-option">
-                            <input type="radio" name="q5" value="a">
-                            Whimsical and playful
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q5" value="b">
-                            Elegant and refined
-                        </label>
-                        <label class="quiz-option">
-                            <input type="radio" name="q5" value="c">
-                            Eclectic and unique
-                        </label>
+                    <div class="quiz-question">
+                        <h3>5. The perfect gift makes you feel:</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="bath">
+                                <span>Relaxed and pampered</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="accessories">
+                                <span>Confident and glamorous</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="housewares">
+                                <span>Comfortable and at home</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="confaketionary">
+                                <span>Happy and playful</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="hair">
+                                <span>Beautiful and put-together</span>
+                            </label>
+                        </div>
                     </div>
+
+                    <button type="submit" class="submit-btn">Discover My Perfect Collection!</button>
+                </form>
+
+                <div id="quiz-result" class="quiz-result">
+                    <h3>Your Perfect Collection:</h3>
+                    <p id="result-text"></p>
                 </div>
-
-                <button type="submit" class="quiz-submit">Discover Your Style</button>
-            </form>
-
-            <div class="quiz-result" id="quiz-result">
-                <h3>🎉 Your Perfect Match!</h3>
-                <p id="result-text"></p>
-                <p style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">Visit us at <strong>65 Newport Avenue, East Providence, RI 02916</strong> to explore your favorite collections! <a href="#contact">Contact us today!</a></p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title" style="color: var(--gold);">Visit or Contact Us</h2>
-        <div class="contact-content fade-in-section">
-            <div class="contact-info">
-                <h3>Come Visit Our Boutique</h3>
-                <p>📍 <span>65 Newport Avenue<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;East Providence, RI 02916</span></p>
-                <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="640c0108080b24051005000b02140d1e1e051e1e4a070b09">[email&#160;protected]</a></p>
-                <p style="margin-top: 2rem;">Follow us for updates, new arrivals, and special events!</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a>
-                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">Instagram</a>
+        <div class="container">
+            <h2 class="section-title">Visit Us & Contact</h2>
+            <div class="contact-content fade-in-section">
+                <div class="contact-info">
+                    <h3>Store Information</h3>
+                    <p><strong>📍 Address:</strong><br>65 Newport Avenue<br>Rumford, RI 02916</p>
+                    <p><strong>📞 Phone:</strong> (401) 555-PIZZ</p>
+                    <p><strong>✉️ Email:</strong> hello@atadofpizzazz.com</p>
+                    <p><strong>🕒 Hours:</strong><br>
+                        Tuesday - Saturday: 10:00 AM - 6:00 PM<br>
+                        Sunday: 12:00 PM - 4:00 PM<br>
+                        Closed Mondays</p>
+                    
+                    <div class="map-container">
+                        <img src="Screenshot_2025-11-24_at_10_26_23_AM.png" alt="Map showing A Tad of Pizzazz location at 65 Newport Avenue, Rumford, RI">
+                    </div>
                 </div>
-            </div>
-            <div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Phone Number">
-                    <textarea placeholder="How can we help you today?"></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+
+                <div class="contact-form">
+                    <h3>Get In Touch</h3>
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#shop">Shop</a>
-            <a href="#gallery-preview">Gallery</a>
-            <a href="#contact">Contact Us</a>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#shop">Shop</a>
+                <a href="#contact">Contact</a>
+                <a href="mailto:hello@atadofpizzazz.com">Email Us</a>
+            </div>
+            <p>&copy; 2025 A Tad of Pizzazz. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">Visit our whimsical boutique in Rumford, RI for handcrafted treasures, unique gifts, and delightful discoveries.</p>
         </div>
-        <p>&copy; 2025 A Tad Of Pizzazz. All Rights Reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Website by Creative Creation | Serving East Providence, RI and surrounding areas</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Quiz Functionality
+    <script>
+        // Quiz functionality
         document.getElementById('pizzazz-quiz').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const answers = {
-                q1: document.querySelector('input[name="q1"]:checked'),
-                q2: document.querySelector('input[name="q2"]:checked'),
-                q3: document.querySelector('input[name="q3"]:checked'),
-                q4: document.querySelector('input[name="q4"]:checked'),
-                q5: document.querySelector('input[name="q5"]:checked')
-            };
+            const formData = new FormData(this);
+            const answers = {};
             
-            if (!answers.q1 || !answers.q2 || !answers.q3 || !answers.q4 || !answers.q5) {
-                alert('Please answer all questions before submitting!');
-                return;
+            // Collect all answers
+            for (let [key, value] of formData.entries()) {
+                answers[key] = value;
             }
             
-            const values = [answers.q1.value, answers.q2.value, answers.q3.value, answers.q4.value, answers.q5.value];
-            const aCount = values.filter(v => v === 'a').length;
-            const bCount = values.filter(v => v === 'b').length;
-            const cCount = values.filter(v => v === 'c').length;
+            // Count answers for each collection
+            const counts = {
+                bath: 0,
+                accessories: 0,
+                housewares: 0,
+                confaketionary: 0,
+                hair: 0
+            };
             
+            Object.values(answers).forEach(answer => {
+                if (counts.hasOwnProperty(answer)) {
+                    counts[answer]++;
+                }
+            });
+            
+            // Find the collection with the most answers
+            const topCollection = Object.keys(counts).reduce((a, b) => 
+                counts[a] > counts[b] ? a : b
+            );
+            
+            // Show result
             const resultDiv = document.getElementById('quiz-result');
             const resultText = document.getElementById('result-text');
             
             let message = '';
-            if (aCount >= 3) {
-                message = '✨ <strong>Whimsical Wonder</strong> - You love unique, one-of-a-kind items! Explore our <a href="#hair-flair">Hair Flair collection</a> and handcrafted accessories. <a href="#confaketionary">The Confaketionary</a> baby gifts will delight you with their creative presentations!';
-            } else if (bCount >= 3) {
-                message = '🎀 <strong>Thoughtful Curator</strong> - You value presentation and meaningful gifts! Browse our <a href="#accessories">Accessories & Adornments</a> and discover <a href="#housewares">housewares</a> that combine beauty with functionality!';
-            } else if (cCount >= 3) {
-                message = '💝 <strong>Luxe Lover</strong> - You appreciate pampering and quality! Our <a href="#bath-body">Bath & Body collection</a> is calling your name with luxurious fragrances and self-care essentials!';
+            if (topCollection === 'bath') {
+                message = '🛁 <strong>Bath & Body Enthusiast</strong> - You appreciate the finer things in life and value self-care! Our Bath & Body collection is perfect for you. Indulge in luxurious handcrafted soaps, bath bombs, and pampering products that will transform your daily routine into a spa-like experience.';
+            } else if (topCollection === 'accessories') {
+                message = '✨ <strong>Accessory Lover</strong> - You have an eye for statement pieces that make an impact! Our Accessories & Adornments collection will speak to your style. From elegant jewelry to unique pieces that add the perfect finishing touch, you\'ll find treasures that make you shine.';
+            } else if (topCollection === 'housewares') {
+                message = '🏠 <strong>Home Decorator</strong> - You understand that a beautiful space creates a beautiful life! Our Housewares collection is calling your name. Discover charming home decor, functional art pieces, and delightful items that bring warmth and personality to every room.';
+            } else if (topCollection === 'confaketionary') {
+                message = '🎉 <strong>Fun Seeker</strong> - You bring joy wherever you go and love making people smile! The Confaketionary is your perfect match. Explore our whimsical treats, playful gifts, and conversation-starting pieces that add a touch of magic to any occasion.';
+            } else if (topCollection === 'hair') {
+                message = '💁‍♀️ <strong>Hair Flair Fashionista</strong> - You know that the right accessory can transform any look! Our Hair Flair collection was made for you. From elegant fascinators to everyday hair accessories, find pieces that add style and sophistication to your personal flair.';
             } else {
-                message = '🌟 <strong>Eclectic Explorer</strong> - You love a bit of everything! From <a href="#hair-flair">Hair Flair</a> to <a href="#confaketionary">Confaketionary</a> items, <a href="#bath-body">Bath & Body</a> to <a href="#housewares">housewares</a> - you\'ll find treasures in every section!';
+                message = '🌟 <strong>Eclectic Explorer</strong> - You love a bit of everything! A Tad of Pizzazz is your perfect destination. From whimsical Hair Flair to practical-yet-pretty Confaketionary items, from Bath & Body luxuries to unique housewares - you\'ll find treasures in every section. Your diverse taste makes shopping with us an adventure!';
             }
             
             resultText.innerHTML = message;
