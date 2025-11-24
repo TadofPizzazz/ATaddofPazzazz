@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Flair | A Tad of Pizzazz</title>
+    <meta name="description" content="Beautiful hair accessories and fascinators that add style and elegance to any look at A Tad of Pizzazz.">
+    
+    <style>
+        :root {
+            --primary: #C71585;
+            --secondary: #FF69B4;
+            --accent: #FFB6C1;
+            --light-pink: #FFF0F5;
+            --gold: #FFD700;
+            --text-dark: #2F2F2F;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --lavender: #E6E6FA;
+            --purple: #9370DB;
+            --rose: #FF1493;
+            --champagne: #F7E7CE;
+            --blush: #DE5D83;
+            --pearl: #F8F8FF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--champagne) 30%, var(--light-pink) 70%, var(--pearl) 100%);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 25px rgba(199, 21, 133, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            font-family: 'Georgia', serif;
+        }
+        
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px) scale(1.05);
+        }
+        
+        .nav-logo {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 8rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--primary) 30%, var(--rose) 70%, var(--secondary) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><defs><radialGradient id="hair1"><stop offset="0%" stop-color="white" stop-opacity="0.4"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient><radialGradient id="hair2"><stop offset="0%" stop-color="gold" stop-opacity="0.3"/><stop offset="100%" stop-color="gold" stop-opacity="0"/></radialGradient></defs><path d="M50 100 Q100 50 150 100 T250 100" stroke="url(%23hair1)" stroke-width="3" fill="none" opacity="0.6"><animate attributeName="d" values="M50 100 Q100 50 150 100 T250 100;M50 100 Q100 150 150 100 T250 100;M50 100 Q100 50 150 100 T250 100" dur="8s" repeatCount="indefinite"/></path><path d="M30 150 Q80 100 130 150 T230 150" stroke="url(%23hair2)" stroke-width="2" fill="none" opacity="0.5"><animate attributeName="d" values="M30 150 Q80 100 130 150 T230 150;M30 150 Q80 200 130 150 T230 150;M30 150 Q80 100 130 150 T230 150" dur="10s" repeatCount="indefinite"/></path><path d="M70 200 Q120 150 170 200 T270 200" stroke="url(%23hair1)" stroke-width="2.5" fill="none" opacity="0.4"><animate attributeName="d" values="M70 200 Q120 150 170 200 T270 200;M70 200 Q120 250 170 200 T270 200;M70 200 Q120 150 170 200 T270 200" dur="12s" repeatCount="indefinite"/></path></svg>');
+            animation: hairFlow 15s ease-in-out infinite;
+        }
+        
+        @keyframes hairFlow {
+            0%, 100% { opacity: 0.8; transform: scale(1) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.05) rotate(2deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            letter-spacing: 4px;
+            animation: titleFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .hero-tagline {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--champagne);
+            opacity: 0.95;
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+        
+        /* Beauty Features */
+        .beauty-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--pearl) 0%, var(--white) 50%, var(--lavender) 100%);
+            position: relative;
+        }
+        
+        .beauty-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="beauty-sparkle" patternUnits="userSpaceOnUse" width="30" height="30"><rect width="30" height="30" fill="none"/><polygon points="15,5 17,12 24,12 18,17 20,24 15,19 10,24 12,17 6,12 13,12" fill="deeppink" opacity="0.1"/><polygon points="8,8 9,10 11,10 9,12 10,14 8,12 6,14 7,12 5,10 7,10" fill="mediumorchid" opacity="0.15"/><polygon points="22,20 23,22 25,22 23,24 24,26 22,24 20,26 21,24 19,22 21,22" fill="hotpink" opacity="0.12"/></pattern></defs><rect width="100" height="100" fill="url(%23beauty-sparkle)"/></svg>');
+            animation: beautySparkle 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes beautySparkle {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-30px, -30px); }
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 4rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .section-title::after {
+            content: '✨ 💫 ✨';
+            display: block;
+            font-size: 2rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+        
+        .beauty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .beauty-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--pearl) 100%);
+            padding: 3rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(199, 21, 133, 0.15);
+            border: 3px solid var(--accent);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .beauty-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 20, 147, 0.1), transparent, rgba(147, 112, 219, 0.1), transparent);
+            animation: beautyGlow 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        @keyframes beautyGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .beauty-card:hover::before {
+            opacity: 1;
+        }
+        
+        .beauty-card:hover {
+            transform: translateY(-20px) scale(1.03) rotate(1deg);
+            box-shadow: 0 30px 70px rgba(199, 21, 133, 0.25);
+            border-color: var(--primary);
+        }
+        
+        .beauty-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 15px 30px rgba(199, 21, 133, 0.3);
+            animation: iconPulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 15px 30px rgba(199, 21, 133, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 20px 40px rgba(199, 21, 133, 0.4); }
+        }
+        
+        .beauty-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .beauty-card p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+            font-family: 'Georgia', serif;
+        }
+        
+        /* Style Showcase */
+        .style-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--purple) 0%, var(--primary) 30%, var(--blush) 70%, var(--secondary) 100%);
+        }
+        
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .style-showcase {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 3px solid var(--champagne);
+        }
+        
+        .style-showcase::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 20, 147, 0.1) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .style-showcase:hover::after {
+            opacity: 1;
+        }
+        
+        .style-showcase:hover {
+            transform: translateY(-18px) rotate(2deg);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+            border-color: var(--rose);
+        }
+        
+        .style-visual {
+            height: 300px;
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--primary) 50%, var(--purple) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .style-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><defs><pattern id="hair-texture" patternUnits="userSpaceOnUse" width="80" height="20"><rect width="80" height="20" fill="none"/><path d="M0 10 Q20 5 40 10 T80 10" stroke="white" stroke-width="1" fill="none" opacity="0.3"/><path d="M0 15 Q30 8 60 15 T80 15" stroke="white" stroke-width="0.8" fill="none" opacity="0.2"/><path d="M0 5 Q25 12 50 5 T80 5" stroke="white" stroke-width="0.6" fill="none" opacity="0.25"/></pattern></defs><rect width="80" height="80" fill="url(%23hair-texture)"/></svg>');
+            animation: hairTexture 25s linear infinite;
+        }
+        
+        @keyframes hairTexture {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-80px); }
+        }
+        
+        .style-details {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .style-details h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .style-details p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+        }
+        
+        /* Glamour Section */
+        .glamour-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glamour-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><radialGradient id="glam-glow1"><stop offset="0%" stop-color="deeppink" stop-opacity="0.15"/><stop offset="100%" stop-color="deeppink" stop-opacity="0"/></radialGradient><radialGradient id="glam-glow2"><stop offset="0%" stop-color="mediumorchid" stop-opacity="0.12"/><stop offset="100%" stop-color="mediumorchid" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="70" r="30" fill="url(%23glam-glow1)"><animate attributeName="r" values="30;45;30" dur="8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.15;0.25;0.15" dur="8s" repeatCount="indefinite"/></circle><circle cx="140" cy="130" r="35" fill="url(%23glam-glow2)"><animate attributeName="r" values="35;25;35" dur="10s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.12;0.22;0.12" dur="10s" repeatCount="indefinite"/></circle><circle cx="120" cy="40" r="25" fill="url(%23glam-glow1)"><animate attributeName="r" values="25;40;25" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.15;0.08;0.15" dur="12s" repeatCount="indefinite"/></circle></svg>');
+            opacity: 0.7;
+        }
+        
+        .glamour-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .glamour-content h2 {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .glamour-content p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-family: 'Georgia', serif;
+        }
+        
+        .glamour-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .glamour-feature {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--pearl) 0%, var(--lavender) 100%);
+            border-radius: 20px;
+            border: 3px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .glamour-feature:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(199, 21, 133, 0.2);
+        }
+        
+        .glamour-feature h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .glamour-feature p {
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 30%, var(--rose) 70%, var(--secondary) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '💄';
+            position: absolute;
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 0.1);
+            top: 15%;
+            left: 8%;
+            animation: beautyFloat 10s ease-in-out infinite;
+        }
+        
+        .cta-section::after {
+            content: '💅';
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.1);
+            bottom: 15%;
+            right: 12%;
+            animation: beautyFloat 12s ease-in-out infinite reverse;
+        }
+        
+        @keyframes beautyFloat {
+            0%, 100% { opacity: 0.1; transform: translateY(0) rotate(0deg); }
+            50% { opacity: 0.2; transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+            font-family: 'Georgia', serif;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1.3rem 3.5rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Georgia', serif;
+        }
+        
+        .cta-btn-primary {
+            background: var(--champagne);
+            color: var(--primary);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 3px solid var(--champagne);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .cta-btn-primary:hover {
+            background: var(--gold);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.4);
+        }
+        
+        .cta-btn-secondary:hover {
+            background: var(--champagne);
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--champagne);
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            font-family: 'Georgia', serif;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.4rem;
+            }
+            
+            .beauty-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .beauty-card {
+                padding: 2rem;
+            }
+            
+            .style-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .glamour-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-logo {
+                height: 30px;
+                left: 1rem;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--lavender);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--purple));
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--rose), var(--secondary));
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="Tadd-Logo.png" alt="A Tad of Pizzazz Logo" class="nav-logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bath-body.html">Bath & Body</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="housewares.html">Housewares</a></li>
+            <li><a href="confaketionary.html">Confaketionary</a></li>
+            <li><a href="hair-flair.html">Hair Flair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hair Flair</h1>
+            <p class="hero-tagline">Where beauty meets artistry in every strand</p>
+        </div>
+    </section>
+
+    <!-- Beauty Features Section -->
+    <section class="beauty-section">
+        <h2 class="section-title">Crafted for Beauty</h2>
+        <div class="beauty-grid">
+            <div class="beauty-card">
+                <div class="beauty-icon">👸</div>
+                <h3>Elegant Fascinators</h3>
+                <p>Exquisite handcrafted fascinators that transform any special occasion into a moment of pure elegance, designed to make you feel like royalty with every wear.</p>
+            </div>
+            
+            <div class="beauty-card">
+                <div class="beauty-icon">🌸</div>
+                <h3>Floral Arrangements</h3>
+                <p>Delicate flower hair accessories that bring the beauty of nature to your style, perfect for romantic occasions, weddings, or adding a feminine touch to everyday looks.</p>
+            </div>
+            
+            <div class="beauty-card">
+                <div class="beauty-icon">✨</div>
+                <h3>Sparkling Accents</h3>
+                <p>Glamorous hair accessories adorned with crystals, pearls, and metallic details that catch the light beautifully and add a touch of sparkle to your style.</p>
+            </div>
+            
+            <div class="beauty-card">
+                <div class="beauty-icon">🎀</div>
+                <h3>Vintage Charm</h3>
+                <p>Timeless hair accessories inspired by vintage glamour, featuring classic ribbons, bows, and retro-inspired designs that never go out of style.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Showcase -->
+    <section class="style-section">
+        <h2 class="section-title" style="color: var(--champagne);">Signature Style Collection</h2>
+        <div class="style-grid">
+            <div class="style-showcase">
+                <div class="style-visual">🪶</div>
+                <div class="style-details">
+                    <h3>Feather Fascinators</h3>
+                    <p>Dramatic statement pieces featuring carefully selected feathers, perfect for special events, theater performances, or any time you want to make an unforgettable impression.</p>
+                </div>
+            </div>
+            
+            <div class="style-showcase">
+                <div class="style-visual">💫</div>
+                <div class="style-details">
+                    <h3>Crystal Hair Pins</h3>
+                    <p>Delicate pins and combs adorned with sparkling crystals and pearls, ideal for weddings, proms, or adding subtle glamour to your everyday style.</p>
+                </div>
+            </div>
+            
+            <div class="style-showcase">
+                <div class="style-visual">🌹</div>
+                <div class="style-details">
+                    <h3>Silk Flower Crowns</h3>
+                    <p>Romantic flower crowns and headbands crafted with premium silk flowers, perfect for bohemian weddings, festivals, or nature-inspired photoshoots.</p>
+                </div>
+            </div>
+            
+            <div class="style-showcase">
+                <div class="style-visual">👑</div>
+                <div class="style-details">
+                    <h3>Regal Headbands</h3>
+                    <p>Elegant headbands and tiaras that make you feel like royalty, featuring intricate beadwork, metallic accents, and luxurious materials.</p>
+                </div>
+            </div>
+            
+            <div class="style-showcase">
+                <div class="style-visual">🎭</div>
+                <div class="style-details">
+                    <h3>Theatrical Pieces</h3>
+                    <p>Bold, dramatic hair accessories perfect for costume parties, theatrical performances, or any time you want to embrace your creative side.</p>
+                </div>
+            </div>
+            
+            <div class="style-showcase">
+                <div class="style-visual">🌙</div>
+                <div class="style-details">
+                    <h3>Evening Elegance</h3>
+                    <p>Sophisticated evening hair accessories that complement formal wear, featuring luxurious materials and refined designs for special occasions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glamour Section -->
+    <section class="glamour-section">
+        <div class="glamour-content">
+            <h2>Express Your Inner Beauty</h2>
+            <p>Hair accessories are more than just functional pieces – they're expressions of your personality, mood, and style. Our Hair Flair collection celebrates the artistry of hair adornment, offering pieces that enhance your natural beauty while making a statement about who you are.</p>
+            
+            <div class="glamour-features">
+                <div class="glamour-feature">
+                    <h4>Occasion Ready</h4>
+                    <p>Perfect pieces for weddings, parties, and special events</p>
+                </div>
+                <div class="glamour-feature">
+                    <h4>Everyday Elegance</h4>
+                    <p>Subtle accessories that elevate your daily style</p>
+                </div>
+                <div class="glamour-feature">
+                    <h4>Custom Creations</h4>
+                    <p>Personalized pieces designed just for you</p>
+                </div>
+                <div class="glamour-feature">
+                    <h4>Quality Materials</h4>
+                    <p>Premium components that last and maintain their beauty</p>
+                </div>
+            </div>
+            
+            <p>Whether you're preparing for your wedding day, attending a gala, or simply want to add a touch of glamour to your everyday look, our Hair Flair collection offers the perfect accessory to complete your style story.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Discover Your Perfect Look</h2>
+            <p>Let our Hair Flair collection inspire your next style adventure. From subtle elegance to show-stopping glamour, find the perfect accessory to express your unique beauty and personality.</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="cta-btn cta-btn-primary">Book Style Consultation</a>
+                <a href="index.html#contact" class="cta-btn cta-btn-secondary">Visit Beauty Boutique</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#shop">Collections</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="mailto:hello@atadofpizzazz.com">Email Us</a>
+        </div>
+        <p>&copy; 2025 A Tad of Pizzazz. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Handcrafted with love in Rumford, RI</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Glamorous hover effects
+            const showcases = document.querySelectorAll('.style-showcase');
+            showcases.forEach(showcase => {
+                showcase.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-18px) rotate(2deg) scale(1.02)';
+                });
+                
+                showcase.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+                });
+            });
+            
+            // Hair flow animation on scroll
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hairFlows = document.querySelectorAll('.hero::before');
+                hairFlows.forEach(flow => {
+                    flow.style.transform = `translateY(${scrolled * 0.2}px) rotate(${scrolled * 0.02}deg)`;
+                });
+            });
+            
+            // Beauty card pulse effect
+            const beautyCards = document.querySelectorAll('.beauty-card');
+            beautyCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.animation = `beautyGlow 3s ease-in-out infinite`;
+                    card.style.animationDelay = `${index * 0.5}s`;
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
