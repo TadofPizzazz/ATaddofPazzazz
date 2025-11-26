@@ -223,20 +223,28 @@
             border-color: var(--terracotta);
         }
         
+        /* Updated warmth-icon styling for images */
         .warmth-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--rust), var(--terracotta));
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 0 auto 2rem;
-            font-size: 2.5rem;
-            color: var(--white);
             position: relative;
             z-index: 2;
             box-shadow: 0 10px 25px rgba(139, 69, 19, 0.3);
+            overflow: hidden;
+            border: 4px solid var(--terracotta);
+        }
+        
+        .warmth-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .warmth-card:hover .warmth-icon img {
+            transform: scale(1.1);
         }
         
         .warmth-card h3 {
@@ -573,6 +581,11 @@
                 padding: 2rem;
             }
             
+            .warmth-icon {
+                width: 120px;
+                height: 120px;
+            }
+            
             .home-grid {
                 grid-template-columns: 1fr;
             }
@@ -625,6 +638,7 @@
         </ul>
     </nav>
 
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -633,35 +647,45 @@
         </div>
     </section>
 
+
     <!-- Warmth Features Section -->
     <section class="warmth-section">
         <h2 class="section-title">Creating Warmth & Character</h2>
         <div class="warmth-grid">
             <div class="warmth-card">
-                <div class="warmth-icon">🏺</div>
+                <div class="warmth-icon">
+                    <img src="Housewares1.png" alt="Artisan Crafted">
+                </div>
                 <h3>Artisan Crafted</h3>
                 <p>Each piece is carefully selected for its unique character and artisan quality, bringing authentic handmade charm to your living spaces with attention to detail and craftsmanship.</p>
             </div>
             
             <div class="warmth-card">
-                <div class="warmth-icon">🌿</div>
+                <div class="warmth-icon">
+                    <img src="Housewares2.png" alt="Natural Materials">
+                </div>
                 <h3>Natural Materials</h3>
                 <p>We prioritize pieces made from sustainable, natural materials that age beautifully and bring organic warmth to your home while supporting eco-conscious living.</p>
             </div>
             
             <div class="warmth-card">
-                <div class="warmth-icon">✨</div>
+                <div class="warmth-icon">
+                    <img src="Housewares3.png" alt="Functional Beauty">
+                </div>
                 <h3>Functional Beauty</h3>
                 <p>Our housewares seamlessly blend form and function, ensuring that every beautiful piece also serves a practical purpose in your daily home life and organization.</p>
             </div>
             
             <div class="warmth-card">
-                <div class="warmth-icon">🏠</div>
+                <div class="warmth-icon">
+                    <img src="Housewares4.png" alt="Timeless Appeal">
+                </div>
                 <h3>Timeless Appeal</h3>
                 <p>Classic designs that transcend trends, our collection offers pieces that will remain beautiful and relevant for years to come, creating lasting value in your home.</p>
             </div>
         </div>
     </section>
+
 
     <!-- Home Collection -->
     <section class="home-section">
@@ -717,6 +741,7 @@
         </div>
     </section>
 
+
     <!-- Comfort Section -->
     <section class="comfort-section">
         <div class="comfort-content">
@@ -746,6 +771,7 @@
         </div>
     </section>
 
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
@@ -757,6 +783,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -770,6 +797,7 @@
         <p>&copy; 2025 A Tad of Pizzazz. All rights reserved.</p>
         <p style="margin-top: 0.5rem;">Handcrafted with love in Rumford, RI</p>
     </footer>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
