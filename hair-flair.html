@@ -213,37 +213,16 @@
             overflow: hidden;
         }
         
-        .beauty-card::before {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 20, 147, 0.1), transparent, rgba(147, 112, 219, 0.1), transparent);
-            animation: beautyGlow 20s linear infinite;
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        
-        @keyframes beautyGlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .beauty-card:hover::before {
-            opacity: 1;
-        }
-        
         .beauty-card:hover {
-            transform: translateY(-20px) scale(1.03) rotate(1deg);
+            transform: translateY(-20px) scale(1.03);
             box-shadow: 0 30px 70px rgba(199, 21, 133, 0.25);
             border-color: var(--primary);
         }
         
+        /* Beauty icon - updated for images */
         .beauty-icon {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             background: linear-gradient(135deg, var(--primary), var(--purple));
             border-radius: 50%;
             display: flex;
@@ -255,12 +234,18 @@
             position: relative;
             z-index: 2;
             box-shadow: 0 15px 30px rgba(199, 21, 133, 0.3);
-            animation: iconPulse 4s ease-in-out infinite;
+            overflow: hidden;
         }
         
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 15px 30px rgba(199, 21, 133, 0.3); }
-            50% { transform: scale(1.05); box-shadow: 0 20px 40px rgba(199, 21, 133, 0.4); }
+        .beauty-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .beauty-card:hover .beauty-icon img {
+            transform: scale(1.1);
         }
         
         .beauty-card h3 {
@@ -316,6 +301,7 @@
             background: linear-gradient(135deg, transparent 0%, rgba(255, 20, 147, 0.1) 50%, transparent 100%);
             opacity: 0;
             transition: opacity 0.3s;
+            pointer-events: none;
         }
         
         .style-showcase:hover::after {
@@ -340,6 +326,17 @@
             overflow: hidden;
         }
         
+        .style-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .style-showcase:hover .style-visual img {
+            transform: scale(1.1);
+        }
+        
         .style-visual::before {
             content: '';
             position: absolute;
@@ -349,6 +346,8 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><defs><pattern id="hair-texture" patternUnits="userSpaceOnUse" width="80" height="20"><rect width="80" height="20" fill="none"/><path d="M0 10 Q20 5 40 10 T80 10" stroke="white" stroke-width="1" fill="none" opacity="0.3"/><path d="M0 15 Q30 8 60 15 T80 15" stroke="white" stroke-width="0.8" fill="none" opacity="0.2"/><path d="M0 5 Q25 12 50 5 T80 5" stroke="white" stroke-width="0.6" fill="none" opacity="0.25"/></pattern></defs><rect width="80" height="80" fill="url(%23hair-texture)"/></svg>');
             animation: hairTexture 25s linear infinite;
+            pointer-events: none;
+            z-index: 1;
         }
         
         @keyframes hairTexture {
@@ -608,6 +607,11 @@
                 padding: 2rem;
             }
             
+            .beauty-icon {
+                width: 120px;
+                height: 120px;
+            }
+            
             .style-grid {
                 grid-template-columns: 1fr;
             }
@@ -660,6 +664,7 @@
         </ul>
     </nav>
 
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -668,42 +673,54 @@
         </div>
     </section>
 
+
     <!-- Beauty Features Section -->
     <section class="beauty-section">
         <h2 class="section-title">Crafted for Beauty</h2>
         <div class="beauty-grid">
             <div class="beauty-card">
-                <div class="beauty-icon">👸</div>
+                <div class="beauty-icon">
+                    <img src="elegantfascinators-Image.png" alt="Elegant Fascinators">
+                </div>
                 <h3>Elegant Fascinators</h3>
                 <p>Exquisite handcrafted fascinators that transform any special occasion into a moment of pure elegance, designed to make you feel like royalty with every wear.</p>
             </div>
             
             <div class="beauty-card">
-                <div class="beauty-icon">🌸</div>
+                <div class="beauty-icon">
+                    <img src="floralarrangements-Image.png" alt="Floral Arrangements">
+                </div>
                 <h3>Floral Arrangements</h3>
                 <p>Delicate flower hair accessories that bring the beauty of nature to your style, perfect for romantic occasions, weddings, or adding a feminine touch to everyday looks.</p>
             </div>
             
             <div class="beauty-card">
-                <div class="beauty-icon">✨</div>
+                <div class="beauty-icon">
+                    <img src="sparklingaccents-Image.png" alt="Sparkling Accents">
+                </div>
                 <h3>Sparkling Accents</h3>
                 <p>Glamorous hair accessories adorned with crystals, pearls, and metallic details that catch the light beautifully and add a touch of sparkle to your style.</p>
             </div>
             
             <div class="beauty-card">
-                <div class="beauty-icon">🎀</div>
+                <div class="beauty-icon">
+                    <img src="vintagecharm-Image.png" alt="Vintage Charm">
+                </div>
                 <h3>Vintage Charm</h3>
                 <p>Timeless hair accessories inspired by vintage glamour, featuring classic ribbons, bows, and retro-inspired designs that never go out of style.</p>
             </div>
         </div>
     </section>
 
+
     <!-- Style Showcase -->
     <section class="style-section">
         <h2 class="section-title" style="color: var(--champagne);">Signature Style Collection</h2>
         <div class="style-grid">
             <div class="style-showcase">
-                <div class="style-visual">🪶</div>
+                <div class="style-visual">
+                    <img src="featherfascinators-Image.png" alt="Feather Fascinators">
+                </div>
                 <div class="style-details">
                     <h3>Feather Fascinators</h3>
                     <p>Dramatic statement pieces featuring carefully selected feathers, perfect for special events, theater performances, or any time you want to make an unforgettable impression.</p>
@@ -711,7 +728,9 @@
             </div>
             
             <div class="style-showcase">
-                <div class="style-visual">💫</div>
+                <div class="style-visual">
+                    <img src="crystalhairpins-Image.png" alt="Crystal Hair Pins">
+                </div>
                 <div class="style-details">
                     <h3>Crystal Hair Pins</h3>
                     <p>Delicate pins and combs adorned with sparkling crystals and pearls, ideal for weddings, proms, or adding subtle glamour to your everyday style.</p>
@@ -719,7 +738,9 @@
             </div>
             
             <div class="style-showcase">
-                <div class="style-visual">🌹</div>
+                <div class="style-visual">
+                    <img src="silkflowercrowns-Image.png" alt="Silk Flower Crowns">
+                </div>
                 <div class="style-details">
                     <h3>Silk Flower Crowns</h3>
                     <p>Romantic flower crowns and headbands crafted with premium silk flowers, perfect for bohemian weddings, festivals, or nature-inspired photoshoots.</p>
@@ -727,7 +748,9 @@
             </div>
             
             <div class="style-showcase">
-                <div class="style-visual">👑</div>
+                <div class="style-visual">
+                    <img src="regalheadbands-Image.png" alt="Regal Headbands">
+                </div>
                 <div class="style-details">
                     <h3>Regal Headbands</h3>
                     <p>Elegant headbands and tiaras that make you feel like royalty, featuring intricate beadwork, metallic accents, and luxurious materials.</p>
@@ -735,7 +758,9 @@
             </div>
             
             <div class="style-showcase">
-                <div class="style-visual">🎭</div>
+                <div class="style-visual">
+                    <img src="theatricalpieces-Image.png" alt="Theatrical Pieces">
+                </div>
                 <div class="style-details">
                     <h3>Theatrical Pieces</h3>
                     <p>Bold, dramatic hair accessories perfect for costume parties, theatrical performances, or any time you want to embrace your creative side.</p>
@@ -743,7 +768,9 @@
             </div>
             
             <div class="style-showcase">
-                <div class="style-visual">🌙</div>
+                <div class="style-visual">
+                    <img src="eveningelegance-Image.png" alt="Evening Elegance">
+                </div>
                 <div class="style-details">
                     <h3>Evening Elegance</h3>
                     <p>Sophisticated evening hair accessories that complement formal wear, featuring luxurious materials and refined designs for special occasions.</p>
@@ -751,6 +778,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Glamour Section -->
     <section class="glamour-section">
@@ -781,6 +809,7 @@
         </div>
     </section>
 
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
@@ -792,6 +821,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -806,6 +836,7 @@
         <p style="margin-top: 0.5rem;">Handcrafted with love in Rumford, RI</p>
     </footer>
 
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Smooth scrolling
@@ -819,7 +850,7 @@
                 });
             });
             
-            // Glamorous hover effects
+            // Glamorous hover effects for style showcases
             const showcases = document.querySelectorAll('.style-showcase');
             showcases.forEach(showcase => {
                 showcase.addEventListener('mouseenter', function() {
@@ -838,15 +869,6 @@
                 hairFlows.forEach(flow => {
                     flow.style.transform = `translateY(${scrolled * 0.2}px) rotate(${scrolled * 0.02}deg)`;
                 });
-            });
-            
-            // Beauty card pulse effect
-            const beautyCards = document.querySelectorAll('.beauty-card');
-            beautyCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.animation = `beautyGlow 3s ease-in-out infinite`;
-                    card.style.animationDelay = `${index * 0.5}s`;
-                }, index * 200);
             });
         });
     </script>
