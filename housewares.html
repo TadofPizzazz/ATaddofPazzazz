@@ -223,10 +223,10 @@
             border-color: var(--terracotta);
         }
         
-        /* Updated warmth-icon styling for images */
+        /* Updated warmth-icon styling for images - 30% larger (195px) */
         .warmth-icon {
-            width: 150px;
-            height: 150px;
+            width: 195px;
+            height: 195px;
             border-radius: 50%;
             margin: 0 auto 2rem;
             position: relative;
@@ -582,8 +582,8 @@
             }
             
             .warmth-icon {
-                width: 120px;
-                height: 120px;
+                width: 156px;
+                height: 156px;
             }
             
             .home-grid {
@@ -829,7 +829,7 @@
                 const scrolled = window.pageYOffset;
                 const homePattern = document.querySelector('.hero::before');
                 if (homePattern) {
-                    document.querySelector('.hero').style.transform = `translateY(${scrolled * 0.3}px)`;
+                    document.querySelector('.hero').style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
                 }
             });
         });
