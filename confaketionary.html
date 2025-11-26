@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Confaketionary | A Tad of Pizzazz</title>
-    <meta name="description" content="Baby gifts designed so sweet, they look good enough to eat! Handcrafted with love at A Tad of Pizzazz.">
+    <meta name="description" content="Baby gifts designed so sweet, they look good enough to eat! Diaper cakes, baby cookies, and custom gift sets at A Tad of Pizzazz.">
     
     <style>
         :root {
@@ -16,8 +16,9 @@
             --text-dark: #2F2F2F;
             --text-light: #666;
             --white: #FFFFFF;
-            --cream: #FFF8DC;
-            --coral: #FF7F7F;
+            --hot-pink: #FF1493;
+            --medium-pink: #F8A5C2;
+            --soft-pink: #FDCFE8;
         }
         
         * {
@@ -28,9 +29,9 @@
         
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text-dark);
-            background: linear-gradient(135deg, var(--cream) 0%, var(--light-pink) 100%);
+            background: var(--white);
             overflow-x: hidden;
         }
         
@@ -42,8 +43,7 @@
             background: var(--primary);
             z-index: 1000;
             padding: 1rem 0;
-            box-shadow: 0 4px 20px rgba(199, 21, 133, 0.3);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(199, 21, 133, 0.3);
         }
         
         nav ul {
@@ -67,12 +67,11 @@
             padding: 0.5rem 1rem;
             border-radius: 25px;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         nav a:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
         }
         
         .nav-logo {
@@ -87,10 +86,10 @@
         
         /* Hero Section */
         .hero {
-            margin-top: 80px;
-            padding: 4rem 2rem 2rem;
+            margin-top: 60px;
+            padding: 4rem 2rem;
             text-align: center;
-            background: linear-gradient(135deg, var(--coral) 0%, var(--secondary) 50%, var(--primary) 100%);
+            background: linear-gradient(180deg, var(--hot-pink) 0%, var(--secondary) 50%, var(--medium-pink) 100%);
             color: var(--white);
             position: relative;
             overflow: hidden;
@@ -103,265 +102,231 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="sprinkles" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="none"/><rect x="3" y="7" width="2" height="6" fill="%23FFD700" transform="rotate(30 4 10)"/><rect x="12" y="3" width="2" height="6" fill="%2300FF7F" transform="rotate(-45 13 6)"/><rect x="7" y="15" width="2" height="6" fill="%23FF69B4" transform="rotate(60 8 18)"/><rect x="15" y="12" width="2" height="6" fill="%2300BFFF" transform="rotate(-30 16 15)"/></pattern></defs><rect width="100" height="100" fill="url(%23sprinkles)" opacity="0.3"/></svg>');
-            animation: sprinkleFloat 20s infinite linear;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="5" y="10" width="2" height="6" fill="white" opacity="0.3" transform="rotate(45 6 13)"/><rect x="25" y="5" width="2" height="6" fill="%2389CFF0" opacity="0.4" transform="rotate(-30 26 8)"/><rect x="45" y="15" width="2" height="6" fill="%23FFFACD" opacity="0.4" transform="rotate(60 46 18)"/><rect x="65" y="8" width="2" height="6" fill="white" opacity="0.3" transform="rotate(-45 66 11)"/><rect x="85" y="12" width="2" height="6" fill="%2398FB98" opacity="0.4" transform="rotate(30 86 15)"/><rect x="15" y="35" width="2" height="6" fill="%23FFB6C1" opacity="0.4" transform="rotate(-60 16 38)"/><rect x="35" y="30" width="2" height="6" fill="white" opacity="0.3" transform="rotate(45 36 33)"/><rect x="55" y="38" width="2" height="6" fill="%2389CFF0" opacity="0.4" transform="rotate(-30 56 41)"/><rect x="75" y="32" width="2" height="6" fill="%23FFFACD" opacity="0.4" transform="rotate(60 76 35)"/><rect x="95" y="28" width="2" height="6" fill="white" opacity="0.3" transform="rotate(-45 96 31)"/><rect x="10" y="55" width="2" height="6" fill="%2398FB98" opacity="0.4" transform="rotate(30 11 58)"/><rect x="30" y="60" width="2" height="6" fill="white" opacity="0.3" transform="rotate(-60 31 63)"/><rect x="50" y="52" width="2" height="6" fill="%23FFB6C1" opacity="0.4" transform="rotate(45 51 55)"/><rect x="70" y="58" width="2" height="6" fill="%2389CFF0" opacity="0.4" transform="rotate(-30 71 61)"/><rect x="90" y="50" width="2" height="6" fill="white" opacity="0.3" transform="rotate(60 91 53)"/><rect x="20" y="80" width="2" height="6" fill="%23FFFACD" opacity="0.4" transform="rotate(-45 21 83)"/><rect x="40" y="75" width="2" height="6" fill="white" opacity="0.3" transform="rotate(30 41 78)"/><rect x="60" y="82" width="2" height="6" fill="%2398FB98" opacity="0.4" transform="rotate(-60 61 85)"/><rect x="80" y="78" width="2" height="6" fill="%23FFB6C1" opacity="0.4" transform="rotate(45 81 81)"/></svg>');
+            background-size: 150px 150px;
+            animation: sprinkleFloat 30s linear infinite;
         }
         
         @keyframes sprinkleFloat {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-20px); }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-150px); }
         }
         
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
             color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
         .hero-tagline {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            opacity: 0.95;
             font-style: italic;
-            margin-bottom: 2rem;
-            color: var(--cream);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         
-        /* Features Grid */
+        /* Features Section */
         .features-section {
             padding: 4rem 2rem;
-            background: var(--white);
+            background: linear-gradient(180deg, var(--soft-pink) 0%, var(--white) 100%);
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            max-width: 1000px;
+            gap: 2rem;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .feature-card {
-            background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 100%);
-            padding: 2.5rem;
-            border-radius: 25px;
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(199, 21, 133, 0.1);
-            border: 3px solid var(--accent);
+            box-shadow: 0 5px 20px rgba(199, 21, 133, 0.1);
+            border: 2px solid var(--accent);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 182, 193, 0.1), transparent);
-            animation: rotate 8s linear infinite;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
         
         .feature-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(199, 21, 133, 0.2);
-            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(199, 21, 133, 0.15);
         }
         
+        /* Feature icon - 50% larger (150px instead of 100px) */
         .feature-icon {
-            width: 80px;
-            height: 80px;
+            width: 150px;
+            height: 150px;
             background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            font-size: 2rem;
+            font-size: 3rem;
             color: var(--white);
-            position: relative;
-            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .feature-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--primary);
             margin-bottom: 1rem;
             font-weight: 700;
-            position: relative;
-            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .feature-card p {
             color: var(--text-dark);
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
         
-        /* Product Showcase */
-        .showcase-section {
+        /* Creations Section */
+        .creations-section {
             padding: 4rem 2rem;
-            background: linear-gradient(45deg, var(--light-pink) 0%, var(--cream) 50%, var(--light-pink) 100%);
+            background: linear-gradient(180deg, var(--medium-pink) 0%, var(--secondary) 100%);
         }
         
-        .showcase-title {
+        .section-title {
             text-align: center;
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 3rem;
             font-weight: 700;
+            font-style: italic;
         }
         
-        .showcase-grid {
+        .section-title.light {
+            color: var(--white);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .creations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         
-        .product-card {
-            background: var(--white);
+        .creation-card {
+            text-align: left;
+        }
+        
+        .creation-visual {
+            height: 220px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--hot-pink) 100%);
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(199, 21, 133, 0.15);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .product-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(255, 182, 193, 0.1) 50%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .product-card:hover::after {
-            opacity: 1;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-15px) rotate(1deg);
-            box-shadow: 0 25px 50px rgba(199, 21, 133, 0.25);
-        }
-        
-        .product-image {
-            height: 250px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: var(--white);
+            margin-bottom: 1rem;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .product-image::before {
+        .creation-visual::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><circle cx="10" cy="15" r="2" fill="white" opacity="0.3"/><circle cx="35" cy="25" r="3" fill="white" opacity="0.2"/><circle cx="20" cy="35" r="1.5" fill="white" opacity="0.4"/><circle cx="40" cy="10" r="2.5" fill="white" opacity="0.25"/></svg>');
-            animation: bubbleFloat 15s infinite ease-in-out;
+            background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 30% 80%, rgba(255,255,255,0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 70%, rgba(255,255,255,0.2) 0%, transparent 50%);
+            pointer-events: none;
         }
         
-        @keyframes bubbleFloat {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-10px) scale(1.1); }
-        }
-        
-        .product-info {
-            padding: 2rem;
+        .creation-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
         
-        .product-info h3 {
-            font-size: 1.3rem;
+        .creation-visual .emoji-placeholder {
+            font-size: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .creation-card h3 {
+            font-size: 1.2rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
         
-        .product-info p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .creation-card p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        /* Story Section */
+        .story-section {
+            padding: 4rem 2rem;
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .story-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            font-style: italic;
+        }
+        
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
         }
         
         /* CTA Section */
         .cta-section {
             padding: 4rem 2rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
             color: var(--white);
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '🧁🍰🎂🧁🍰🎂';
-            position: absolute;
-            top: 20%;
-            left: -100%;
-            font-size: 3rem;
-            opacity: 0.2;
-            animation: slideText 20s infinite linear;
-        }
-        
-        .cta-section::after {
-            content: '🎉🎁🌟🎉🎁🌟';
-            position: absolute;
-            bottom: 20%;
-            right: -100%;
-            font-size: 2.5rem;
-            opacity: 0.2;
-            animation: slideTextReverse 25s infinite linear;
-        }
-        
-        @keyframes slideText {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        
-        @keyframes slideTextReverse {
-            0% { right: -100%; }
-            100% { right: 100%; }
         }
         
         .cta-content {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
@@ -374,14 +339,15 @@
         }
         
         .cta-content p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             opacity: 0.95;
+            line-height: 1.8;
         }
         
         .cta-buttons {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -390,14 +356,12 @@
             padding: 1rem 2.5rem;
             border: none;
             border-radius: 30px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            position: relative;
-            overflow: hidden;
         }
         
         .cta-btn-primary {
@@ -412,12 +376,12 @@
         }
         
         .cta-btn:hover {
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .cta-btn-primary:hover {
             background: #FFC700;
-            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
         }
         
         .cta-btn-secondary:hover {
@@ -427,7 +391,7 @@
         
         /* Footer */
         footer {
-            background: var(--text-dark);
+            background: linear-gradient(180deg, #4a7c59 0%, #3d6b4a 100%);
             color: var(--white);
             text-align: center;
             padding: 2rem;
@@ -438,34 +402,51 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            margin: 1rem 0;
+            margin-bottom: 1rem;
         }
         
         .footer-links a {
-            color: var(--accent);
+            color: var(--white);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            font-size: 1rem;
         }
         
         .footer-links a:hover {
-            color: var(--secondary);
+            color: var(--gold);
+        }
+        
+        footer p {
+            opacity: 0.9;
+            font-size: 0.9rem;
         }
         
         /* Responsive Design */
+        @media (max-width: 900px) {
+            .creations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
             
             .hero-tagline {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
             
             .features-grid {
                 grid-template-columns: 1fr;
             }
             
-            .showcase-grid {
+            .feature-icon {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .creations-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -478,24 +459,15 @@
                 height: 30px;
                 left: 1rem;
             }
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--light-pink);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary);
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            nav li {
+                margin: 0 0.5rem;
+            }
         }
     </style>
 </head>
@@ -513,108 +485,131 @@
         </ul>
     </nav>
 
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>THE CONFAKETIONARY</h1>
+            <h1>The Confaketionary</h1>
             <p class="hero-tagline">Baby gifts designed so sweet, they look good enough to eat!</p>
         </div>
     </section>
+
 
     <!-- Features Section -->
     <section class="features-section">
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🍭</div>
-                <h3>SUGAR FREE</h3>
+                <div class="feature-icon">
+                    <img src="sugarfree-Image.png" alt="Sugar Free">
+                </div>
+                <h3>Sugar Free</h3>
                 <p>Zero sugar with 100% sweetness. Handcrafted with love, these gifts offer more than just sweet surprises, they celebrate both baby and parents.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>SIGNATURE RECIPIES</h3>
+                <div class="feature-icon">
+                    <img src="signaturerecipies-Image.png" alt="Signature Recipes">
+                </div>
+                <h3>Signature Recipes</h3>
                 <p>Freshly baked goodness, only at A Tad of Pizzazz. Each creation follows our exclusive recipes for unforgettable baby gifts.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">🌾</div>
-                <h3>GLUTEN FREE</h3>
+                <div class="feature-icon">
+                    <img src="glutenfree-placeholder.png" alt="Gluten Free">
+                </div>
+                <h3>Gluten Free</h3>
                 <p>No glue or other adhesives are used to secure the baby items. Everything is carefully assembled with safe, gentle techniques.</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon">🎨</div>
-                <h3>MADE-TO-ORDER</h3>
+                <div class="feature-icon">
+                    <img src="madetoorder-Image.png" alt="Made-to-Order">
+                </div>
+                <h3>Made-to-Order</h3>
                 <p>Your imagination is our ingredient. Custom orders welcomed! Let us create something special just for your little one.</p>
             </div>
         </div>
     </section>
 
-    <!-- Product Showcase -->
-    <section class="showcase-section">
-        <h2 class="showcase-title">Sweet Creations That Celebrate New Life</h2>
-        <div class="showcase-grid">
-            <div class="product-card">
-                <div class="product-image">🧁</div>
-                <div class="product-info">
-                    <h3>Diaper Cupcakes</h3>
-                    <p>Adorable single-serving treats made from soft diapers and essential baby items, designed to look like delicious cupcakes.</p>
+
+    <!-- Creations Section -->
+    <section class="creations-section">
+        <h2 class="section-title light">Sweet Creations That Celebrate New Life</h2>
+        <div class="creations-grid">
+            <div class="creation-card">
+                <div class="creation-visual">
+                    <img src="diapercupcakes-Image.png" alt="Diaper Cupcakes">
                 </div>
+                <h3>Diaper Cupcakes</h3>
+                <p>Adorable single-serving treats made from soft diapers and essential baby items, designed to look like delicious cupcakes.</p>
             </div>
             
-            <div class="product-card">
-                <div class="product-image">🎂</div>
-                <div class="product-info">
-                    <h3>Diaper Cakes</h3>
-                    <p>Multi-tiered celebrations featuring premium diapers, soft washcloths, and carefully selected baby essentials arranged in cake form.</p>
+            <div class="creation-card">
+                <div class="creation-visual">
+                    <img src="diapercakes-placeholder.png" alt="Diaper Cakes">
                 </div>
+                <h3>Diaper Cakes</h3>
+                <p>Multi-tiered celebrations featuring premium diapers, soft washcloths, and carefully selected baby essentials arranged in cake form.</p>
             </div>
             
-            <div class="product-card">
-                <div class="product-image">🍪</div>
-                <div class="product-info">
-                    <h3>Baby Cookies</h3>
-                    <p>Sweet washcloth treats folded and arranged to look like tempting cookies, complete with delightful baby accessories.</p>
+            <div class="creation-card">
+                <div class="creation-visual">
+                    <img src="babycookies-Image.png" alt="Baby Cookies">
                 </div>
+                <h3>Baby Cookies</h3>
+                <p>Sweet washcloth treats folded and arranged to look like tempting cookies, complete with delightful baby accessories.</p>
             </div>
             
-            <div class="product-card">
-                <div class="product-image">🍰</div>
-                <div class="product-info">
-                    <h3>Celebration Centerpieces</h3>
-                    <p>Grand displays that serve as both gorgeous decoration and practical gift, featuring multiple baby essentials in edible-looking arrangements.</p>
+            <div class="creation-card">
+                <div class="creation-visual">
+                    <img src="celebrationcenterpieces-Image.png" alt="Celebration Centerpieces">
                 </div>
+                <h3>Celebration Centerpieces</h3>
+                <p>Grand displays that serve as both gorgeous decoration and practical gift, featuring multiple baby essentials in edible-looking arrangements.</p>
             </div>
             
-            <div class="product-card">
-                <div class="product-image">🧸</div>
-                <div class="product-info">
-                    <h3>Plush Companions</h3>
-                    <p>Soft, cuddly friends that complement our edible-looking creations, providing comfort and joy for the new arrival.</p>
+            <div class="creation-card">
+                <div class="creation-visual">
+                    <img src="plushcompanions-Image.png" alt="Plush Companions">
                 </div>
+                <h3>Plush Companions</h3>
+                <p>Soft, cuddly friends that complement our edible-looking creations, providing comfort and joy for the new arrival.</p>
             </div>
             
-            <div class="product-card">
-                <div class="product-image">🎁</div>
-                <div class="product-info">
-                    <h3>Custom Gift Sets</h3>
-                    <p>Personalized collections combining our signature "treats" with specially chosen items tailored to welcome each unique little one.</p>
+            <div class="creation-card">
+                <div class="creation-visual">
+                    <img src="customgiftsets-Image.png" alt="Custom Gift Sets">
                 </div>
+                <h3>Custom Gift Sets</h3>
+                <p>Personalized collections combining our signature "treats" with specially chosen items tailored to welcome each unique little one.</p>
             </div>
         </div>
     </section>
 
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="story-content">
+            <h2>Bringing Joy to Life's Sweetest Moments</h2>
+            <p>The Confaketionary was born from a love of creating memorable gifts that bring smiles to faces. Every piece we craft is designed to capture the excitement and joy of welcoming a new baby into the world.</p>
+            <p>Whether you're celebrating a baby shower, gender reveal, or the arrival of a new little one, our creations make every moment more magical. Each piece tells a story of love, anticipation, and the sweet beginning of a new chapter.</p>
+        </div>
+    </section>
+
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
-            <h2>Ready to Create Something Sweet?</h2>
-            <p>Whether you're celebrating a baby shower, welcoming a new arrival, or searching for the perfect gift, our Confaketionary creations are handcrafted with love and designed to delight both babies and parents.</p>
+            <h2>Create Something Sweet Together</h2>
+            <p>Ready to celebrate a special moment with a one-of-a-kind Confaketionary creation? Let us help you design the perfect gift or centerpiece that will be remembered for years to come.</p>
             <div class="cta-buttons">
-                <a href="#contact" class="cta-btn cta-btn-primary">Order Custom Creation</a>
-                <a href="index.html#contact" class="cta-btn cta-btn-secondary">Visit Our Store</a>
+                <a href="index.html#contact" class="cta-btn cta-btn-primary">Order Custom Creation</a>
+                <a href="index.html#contact" class="cta-btn cta-btn-secondary">Visit Our Boutique</a>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -629,10 +624,10 @@
         <p style="margin-top: 0.5rem;">Handcrafted with love in Rumford, RI</p>
     </footer>
 
+
     <script>
-        // Add some delightful interactions
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
+            // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -640,18 +635,6 @@
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth' });
                     }
-                });
-            });
-            
-            // Add sparkle effect on hover for product cards
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) rotate(1deg) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
                 });
             });
         });
